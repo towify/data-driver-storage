@@ -1,0 +1,7 @@
+.idea/
+node_modules
+package-lock.json
+towify-tar-resource
+towify
+dist
+yarn-error.log

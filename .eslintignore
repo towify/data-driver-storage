@@ -1,0 +1,5 @@
+/dist
+/app/test
+/npm-publish-cli.js
+/app/lib/
+.eslintrc.js
