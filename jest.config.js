@@ -1,3 +1,8 @@
+/**
+ *  @Author KaySaith
+ *  @Date 11/12/20
+ */
+
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
@@ -7,7 +12,7 @@ module.exports = {
     '^.+\\.(js|jsx)$': 'babel-jest'
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!soid-data|towify-scf-client-engine|towify-scf-values|@towify/ui-util|@towify/common-values|live-data-type/)'
+    '/node_modules/(?!soid-data|towify-scf-client-engine|towify-scf-values|@towify/common-values|live-data-type/)'
   ],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
