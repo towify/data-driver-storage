@@ -1,8 +1,9 @@
 {
-  "name": "@towify/document-generator",
-  "description": "towify document generator",
+  "name": "towify-data-driver-storage",
+  "description": "towify-data-driver-storage",
   "license": "MIT",
   "author": "Towify",
+  "type": "module",
   "version": "0.0.1",
   "main": "./lib/index.js",
   "scripts": {
