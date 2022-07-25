@@ -41,11 +41,7 @@ export interface IQueryManager {
 
   some(fieldPath: QueryFieldPathType, value: string): this;
 
-  /**
-   *  可以通过指定 limit 限制返回结果的数量（默认为 100）
-   *  由于性能原因，limit 最大只能设为 1000。即使将其设为大于 1000 的数，云端也只会返回 1,000 条结果。
-   *  */
-  limit(count: number): this;
+  pageIndex(count: number): this;
 
   /**
    * 可以通过设置 skip 来跳过一定数量的结果

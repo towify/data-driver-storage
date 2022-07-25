@@ -4,6 +4,7 @@
   "license": "MIT",
   "author": "Towify",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "tsc": "tsc",
     "publish": "node npm-publish-cli.js",

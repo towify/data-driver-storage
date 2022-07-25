@@ -241,8 +241,8 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  limit(count: number): this {
-    if (count < 1) throw new Error('TDS ERROR: Invalid Skip Count');
+  pageIndex(count: number): this {
+    this.#data.pageIndex = count;
     return this;
   }
 
