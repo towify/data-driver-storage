@@ -4,6 +4,7 @@
  */
 import { PermissionService } from './service/permission.service';
 import { TableManager } from './manager/table.manager';
+import { StorageHelper } from './helper/storage.helper';
 
 export namespace TDS {
   export const init = (params: {
@@ -13,4 +14,6 @@ export namespace TDS {
   }) => PermissionService.init(params);
 
   export const Table = TableManager;
+
+  export const Helper = StorageHelper;
 }

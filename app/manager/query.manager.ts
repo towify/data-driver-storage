@@ -12,7 +12,7 @@ import {
   SortEnum
 } from '@towify-types/live-data';
 import { NanoIdHelper } from 'soid-data';
-import { PermissionService } from '../service/permission.service';
+import { StorageHelper } from '../helper/storage.helper';
 
 export class QueryManager implements IQueryManager {
   #data: {
@@ -30,6 +30,7 @@ export class QueryManager implements IQueryManager {
     sorts?: { fieldHashName?: string; type: SortEnum }[];
     executorId: string;
     customerToken: string;
+    ignoreToken?: boolean;
   };
 
   #queries: {
@@ -54,7 +55,6 @@ export class QueryManager implements IQueryManager {
   }
 
   async destroy(): Promise<string | undefined> {
-    const table = await PermissionService.instance.getTable(this.tableHashName);
     // todo 增加 query 后直接 remove 的 方法
     return Promise.resolve(undefined);
   }
@@ -66,11 +66,13 @@ export class QueryManager implements IQueryManager {
       count?: number;
     };
   }> {
-    const table = await PermissionService.instance.getTable(this.tableHashName);
     this.#prepareData();
-    if (!table) return { message: 'Table is not existed' };
-    console.log(this.#data, 'data ---');
-    const result = await table.find(this.#data);
+    this.#data.ignoreToken = true;
+    console.debug(this.#data, 'TOWIFY STORAGE: find method parameters.');
+    const result = await StorageHelper.find({
+      tableHashName: this.tableHashName,
+      ...this.#data
+    });
     this.#clear();
     return result;
   }
@@ -79,19 +81,21 @@ export class QueryManager implements IQueryManager {
     message?: string;
     data?: LiveObjectType;
   }> {
-    const table = await PermissionService.instance.getTable(this.tableHashName);
     this.#prepareData();
-    if (!table) return { message: 'Table is not existed' };
-    const result = await table.find(this.#data);
+    const result = await StorageHelper.find({
+      tableHashName: this.tableHashName,
+      ...this.#data
+    });
     this.#clear();
     return { message: result.message, data: result.data?.list[0] };
   }
 
   async count(): Promise<{ message?: string; count?: number }> {
-    const table = await PermissionService.instance.getTable(this.tableHashName);
     this.#prepareData();
-    if (!table) return { message: 'Table is not existed' };
-    const result = table.count(this.#data);
+    const result = await StorageHelper.count({
+      tableHashName: this.tableHashName,
+      ...this.#data
+    });
     this.#clear();
     return result;
   }

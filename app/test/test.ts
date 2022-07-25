@@ -6,28 +6,33 @@ import { TDS } from '../tds.namespace';
 import { ScfClientService } from '@towify/scf-engine';
 import { SCF } from '@towify-serverless/scf-api';
 
-const projectId = 'anbeiyLiqOXFqRq8';
-const salt = 'c0a191e8-7e98-47f9-a859-81f6258b964c';
-const service = async () => {
-  localStorage.setItem('towify-dynamic-salt', salt);
+const getSecret = async () => {
   ScfClientService.init({
     apiUrl: 'https://api-test.towify.com',
-    token: '4a2e761b-467e-4bd0-a483-cb95a52f4cd2',
+    token: 'e56888ac-71b0-4870-bb5c-bc6cc3930e10',
     language: 'en' as any
   });
   const response =
     await ScfClientService.getInstance().call<SCF.LiveTableGetAccessInfo>({
       path: '/livetable/access/get',
-      params: { projectId },
+      params: { projectId: '' },
       method: 'post',
       ignoreToken: false
     });
-  if (response.errorMessage) console.log(response.errorMessage);
-  ScfClientService.getInstance().liveTableAccessInfo = response.data!;
+  console.log(response, 'response');
+};
+
+const salt = '456ae299-de48-41d4-8f15-5a34a78a6101';
+const service = async () => {
+  localStorage.setItem('towify-dynamic-salt', salt);
+  ScfClientService.init({
+    apiUrl: 'https://api-test.towify.com',
+    language: 'en' as any
+  });
   return TDS.init({
     url: 'https://api-test.towify.com',
-    appId: response.data!.appId,
-    appKey: response.data!.appKey
+    appId: '39ff59b26a832b6391450df5903404fc',
+    appKey: 'd9d15be509d1acd154dbe3e2fdbf0950'
   });
 };
 
@@ -41,7 +46,7 @@ describe('data driver storage', () => {
           fieldHashName: 'oRiPFptLZjAdAGKV',
           referenceTableHashName: ''
         },
-        '13777777777'
+        13777777777
       )
       .ascending('createdAt')
       .find();

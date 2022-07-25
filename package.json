@@ -3,9 +3,7 @@
   "description": "towify-data-driver-storage",
   "license": "MIT",
   "author": "Towify",
-  "type": "module",
   "version": "0.0.1",
-  "main": "./lib/index.js",
   "scripts": {
     "tsc": "tsc",
     "publish": "node npm-publish-cli.js",
@@ -32,17 +30,17 @@
     "*.{js,css,md,json,scss}": "prettier --write"
   },
   "peerDependencies": {
-    "@towify-serverless/scf-api": ">=0.6.20",
+    "@towify-serverless/scf-api": ">=0.6.24",
     "@towify-types/live-data": ">=0.2.28",
-    "@towify/data-engine": ">=0.4.23",
-    "@towify/scf-engine": ">=0.3.2",
+    "@towify/event-query-helper": ">=0.1.5",
+    "@towify/scf-engine": ">=0.3.4",
     "soid-data": ">=0.1.40"
   },
   "dependencies": {
-    "@towify-serverless/scf-api": ">=0.6.20",
+    "@towify-serverless/scf-api": ">=0.6.24",
     "@towify-types/live-data": "^0.2.28",
-    "@towify/data-engine": "^0.4.23",
-    "@towify/scf-engine": "^0.3.2",
+    "@towify/event-query-helper": "^0.1.5",
+    "@towify/scf-engine": "^0.3.4",
     "soid-data": "^0.1.40"
   },
   "devDependencies": {
@@ -54,7 +52,6 @@
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/eslint-plugin-tslint": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
-    "jest-environment-jsdom": "26.6.2",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.5",
     "eslint": "^8.20.0",
@@ -63,6 +60,7 @@
     "eslint-plugin-import": "^2.26.0",
     "husky": "^8.0.1",
     "jest": "^26.6.3",
+    "jest-environment-jsdom": "26.6.2",
     "latest-version": "^6.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
