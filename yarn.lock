@@ -1468,28 +1468,14 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@towify-serverless/scf-api@>=0.6.24":
-  version "0.6.24"
-  resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.6.24.tgz#f2fdcb88ef9736a2ed2aee23173756e5c58abd55"
-  integrity sha512-nhdfbpCzFyFfT00yzVCpcB61LE4WrJOPciJcN5HRSlDQibTqeG01alXggM4UMkTh6bNlC7YkMhQnRrMLg6IQbA==
+"@towify-serverless/scf-api@>=0.6.28", "@towify-serverless/scf-api@^0.6.28":
+  version "0.6.28"
+  resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.6.28.tgz#4c12ef3d206018046628f45d540dd68accef5931"
+  integrity sha512-HuSjaWyglVOK2ZnobFijoIAwM3KuZqv5GpmxiEyJ62OqpB/UY3uzNS0vZcIPNdC9YLeysWzKuwqT9/4tm6AyIA==
   optionalDependencies:
     "@towify-types/api-hub" ">=0.0.39"
     "@towify-types/config" ">=0.0.8"
-    "@towify-types/dsl" ">=1.0.34"
-    "@towify-types/kit" ">=0.1.18"
-    "@towify-types/live-data" ">=0.2.28"
-    "@towify-types/resource" ">=0.1.1"
-    "@towify-types/third-party" ">=0.0.3"
-    "@towify-types/user" ">=0.0.31"
-
-"@towify-serverless/scf-api@^0.6.23":
-  version "0.6.23"
-  resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.6.23.tgz#ff9d9d1d9c38ff7df77d886a9d39924b18d87668"
-  integrity sha512-VUc4DS/hQo/Zo1EJtd4YMIbBKmIuPjK2VsltDqFE/PKgsLl8SPYPl4NZzGhOwKJzRNcdfm1NkuT+arB41tOmcw==
-  optionalDependencies:
-    "@towify-types/api-hub" ">=0.0.39"
-    "@towify-types/config" ">=0.0.8"
-    "@towify-types/dsl" ">=1.0.34"
+    "@towify-types/dsl" ">=1.0.57"
     "@towify-types/kit" ">=0.1.18"
     "@towify-types/live-data" ">=0.2.28"
     "@towify-types/resource" ">=0.1.1"
@@ -1508,7 +1494,16 @@
   dependencies:
     soid-data "0.0.83"
 
-"@towify-types/dsl@>=1.0.34", "@towify-types/dsl@^1.0.37", "@towify-types/dsl@^1.0.4":
+"@towify-types/dsl@>=1.0.57":
+  version "1.0.63"
+  resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.0.63.tgz#bfd29ed0e756eed735988955bc3b56e2d13a94a5"
+  integrity sha512-ttq2JAeRdQHoTAs5pFaKCiHVS3tcdoCZrXzAgi37FRuIL+93i0KzOkYQk0TeAW1gPWxkGJbjKjPIaytbC2/+Sw==
+  dependencies:
+    "@towify-types/live-data" "^0.2.30"
+    "@towify/common-values" "0.1.15"
+    "@towify/type-helper" "0.0.2"
+
+"@towify-types/dsl@^1.0.37", "@towify-types/dsl@^1.0.4":
   version "1.0.53"
   resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.0.53.tgz#7c6c82754c0aeea0276fba48f9bc1c2e84cf6ace"
   integrity sha512-hq44iCBYIOOMdfePJOpB23mrG66Yh3OHNhcClPmYrgQq0Hm0AlV/Ycnj8y6PONbx992hPI95kF3HZRI+sfpo9g==
@@ -1528,6 +1523,11 @@
   version "0.2.29"
   resolved "https://registry.yarnpkg.com/@towify-types/live-data/-/live-data-0.2.29.tgz#7a8c54e48f733f558661d211cf25453228a80dbe"
   integrity sha512-8recFrOu6bb51/RCLciToVz1t4WUmjT8Jh4USGb6iAWp0OSmzT6mxBa+KoL2gkZXfXGMd2FZlgly2hbtonuA2w==
+
+"@towify-types/live-data@^0.2.30":
+  version "0.2.30"
+  resolved "https://registry.yarnpkg.com/@towify-types/live-data/-/live-data-0.2.30.tgz#7d7c9d61c019bec4fd142a2eb995a2fe264abf25"
+  integrity sha512-MRv67vXm86YcaFOTAVNfIl0lIUyLJxpBb+uPh442NwXfvTyDYkiJnCAM9u8n+3drVuPqHJSIEXPm1K2hRmuUPg==
 
 "@towify-types/resource@>=0.1.1":
   version "0.1.1"
@@ -1566,12 +1566,12 @@
     "@towify/type-helper" "^0.0.2"
     soid-data "^0.1.36"
 
-"@towify/scf-engine@^0.3.4":
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/@towify/scf-engine/-/scf-engine-0.3.4.tgz#2b82160f76279da4a0da9630f0f79782ed8623ff"
-  integrity sha512-xcmNck/hTjHpNnR1XLXS8VhTqsB+zMm7al+yD5lKMEswNxIRfBRfjwsih9D9kXmhCgotKy2A5S54FQjGUB2TZA==
+"@towify/scf-engine@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@towify/scf-engine/-/scf-engine-0.4.0.tgz#472a4529cd44e5b07d4de2af7fdfcc4907227e48"
+  integrity sha512-Z6g7WzziizotqRptV+BBNDIyau6tJwenvCvYZHPHqXqEU6Kvj8FyxGOfyDyiOFkbhVhVKJbgUV8czPdxFreOCQ==
   dependencies:
-    "@towify-serverless/scf-api" "^0.6.23"
+    "@towify-serverless/scf-api" "^0.6.28"
     "@towify/encryptor" "^0.1.0"
     soid-data "^0.1.40"
   optionalDependencies:

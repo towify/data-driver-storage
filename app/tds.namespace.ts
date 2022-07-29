@@ -2,7 +2,7 @@
  * @author kaysaith
  * @date 24 Jul, 2022
  */
-import { PermissionService } from './service/permission.service';
+import { TDSService } from './service/TDSService';
 import { TableManager } from './manager/table.manager';
 import { StorageHelper } from './helper/storage.helper';
 
@@ -11,7 +11,7 @@ export namespace TDS {
     appId: string;
     appKey: string;
     url: string;
-  }) => PermissionService.init(params);
+  }) => TDSService.init(params);
 
   export const Table = TableManager;
 

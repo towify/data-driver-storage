@@ -2,10 +2,12 @@
  * @author kaysaith
  * @date 24 Jul, 2022
  */
-import { ScfClientService } from '@towify/scf-engine';
+import { ScfClientManager } from '@towify/scf-engine';
 
-export class PermissionService {
-  static instance: PermissionService;
+export class TDSService {
+  static instance: TDSService;
+  scf!: ScfClientManager;
+
   private constructor() {
     // todo
   }
@@ -16,8 +18,8 @@ export class PermissionService {
     readonly url: string;
     readonly language?: 'zh-CN' | 'en';
   }) {
-    this.instance = new PermissionService();
-    ScfClientService.init({
+    this.instance = new TDSService();
+    this.instance.scf = new ScfClientManager({
       apiUrl: params.url,
       language: params.language as any,
       liveTableAccessInfo: {
