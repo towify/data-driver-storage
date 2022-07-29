@@ -2,9 +2,9 @@
  * @author kaysaith
  * @date 24 Jul, 2022
  */
-import { TDSService } from './service/TDSService';
 import { TableManager } from './manager/table.manager';
 import { StorageHelper } from './helper/storage.helper';
+import { TDSService } from './service/tds.service';
 
 export namespace TDS {
   export const init = (params: {

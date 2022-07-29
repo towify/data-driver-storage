@@ -14,7 +14,7 @@ import {
 } from '@towify-types/live-data';
 import { EventQueryHelper } from '@towify/event-query-helper';
 import { SCF } from '@towify-serverless/scf-api';
-import { TDSService } from '../service/TDSService';
+import { TDSService } from '../service/tds.service';
 
 export class StorageHelper {
   static async find(params: {

@@ -3,17 +3,12 @@
  * @date 24 Jul, 2022
  */
 import { TDS } from '../tds.namespace';
-import { ScfClientService } from '@towify/scf-engine';
 import { SCF } from '@towify-serverless/scf-api';
+import { TDSService } from '../service/tds.service';
 
 const getSecret = async () => {
-  ScfClientService.init({
-    apiUrl: 'https://api-test.towify.com',
-    token: 'e56888ac-71b0-4870-bb5c-bc6cc3930e10',
-    language: 'en' as any
-  });
   const response =
-    await ScfClientService.getInstance().call<SCF.LiveTableGetAccessInfo>({
+    await TDSService.instance.scf.call<SCF.LiveTableGetAccessInfo>({
       path: '/livetable/access/get',
       params: { projectId: '' },
       method: 'post',
@@ -25,10 +20,6 @@ const getSecret = async () => {
 const salt = '456ae299-de48-41d4-8f15-5a34a78a6101';
 const service = async () => {
   localStorage.setItem('towify-dynamic-salt', salt);
-  ScfClientService.init({
-    apiUrl: 'https://api-test.towify.com',
-    language: 'en' as any
-  });
   return TDS.init({
     url: 'https://api-test.towify.com',
     appId: '39ff59b26a832b6391450df5903404fc',
