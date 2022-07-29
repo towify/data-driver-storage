@@ -12,7 +12,7 @@ export class TDSService {
     // todo
   }
 
-  static async init(params: {
+  static init(params: {
     readonly appId: string;
     readonly appKey: string;
     readonly url: string;
