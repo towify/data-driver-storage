@@ -1468,7 +1468,7 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@towify-serverless/scf-api@>=0.6.28", "@towify-serverless/scf-api@^0.6.28":
+"@towify-serverless/scf-api@^0.6.28":
   version "0.6.28"
   resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.6.28.tgz#4c12ef3d206018046628f45d540dd68accef5931"
   integrity sha512-HuSjaWyglVOK2ZnobFijoIAwM3KuZqv5GpmxiEyJ62OqpB/UY3uzNS0vZcIPNdC9YLeysWzKuwqT9/4tm6AyIA==
@@ -1566,10 +1566,10 @@
     "@towify/type-helper" "^0.0.2"
     soid-data "^0.1.36"
 
-"@towify/scf-engine@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@towify/scf-engine/-/scf-engine-0.4.0.tgz#472a4529cd44e5b07d4de2af7fdfcc4907227e48"
-  integrity sha512-Z6g7WzziizotqRptV+BBNDIyau6tJwenvCvYZHPHqXqEU6Kvj8FyxGOfyDyiOFkbhVhVKJbgUV8czPdxFreOCQ==
+"@towify/scf-engine@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@towify/scf-engine/-/scf-engine-0.4.1.tgz#9e85562a81eb5066a5842bf161eb678c25d794db"
+  integrity sha512-hS+tmk/A4AW6/iLWdD1y08KxTwj0bDnf+Vbptv+mTUEYcLRLpUsf1ItWnTJ56AyoC2Q3+owgF2Qi5tFpUFr3zQ==
   dependencies:
     "@towify-serverless/scf-api" "^0.6.28"
     "@towify/encryptor" "^0.1.0"

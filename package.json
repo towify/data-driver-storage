@@ -34,14 +34,14 @@
     "@towify-serverless/scf-api": ">=0.6.28",
     "@towify-types/live-data": ">=0.2.30",
     "@towify/event-query-helper": ">=0.1.5",
-    "@towify/scf-engine": ">=0.4.0",
+    "@towify/scf-engine": ">=0.4.1",
     "soid-data": ">=0.1.40"
   },
   "dependencies": {
-    "@towify-serverless/scf-api": ">=0.6.28",
+    "@towify-serverless/scf-api": "^0.6.28",
     "@towify-types/live-data": "^0.2.30",
     "@towify/event-query-helper": "^0.1.5",
-    "@towify/scf-engine": "^0.4.0",
+    "@towify/scf-engine": "^0.4.1",
     "soid-data": "^0.1.40"
   },
   "devDependencies": {
