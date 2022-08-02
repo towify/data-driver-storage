@@ -28,4 +28,8 @@ export class TDSService {
       }
     });
   }
+
+  static addToken(token: string) {
+    this.instance.scf.token = token;
+  }
 }
