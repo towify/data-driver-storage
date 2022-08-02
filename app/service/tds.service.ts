@@ -5,8 +5,8 @@
 import { ScfClientManager } from '@towify/scf-engine';
 
 export class TDSService {
-  static instance: TDSService;
-  scf!: ScfClientManager;
+  public static instance: TDSService;
+  public scf!: ScfClientManager;
 
   private constructor() {
     // todo
@@ -27,9 +27,10 @@ export class TDSService {
         appKey: params.appKey
       }
     });
+    return this;
   }
 
-  static addToken(token: string) {
-    this.instance.scf.token = token;
+  addToken(token: string) {
+    this.scf.token = token;
   }
 }
