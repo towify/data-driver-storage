@@ -7,11 +7,8 @@ import { StorageHelper } from './helper/storage.helper';
 import { TDSService } from './service/tds.service';
 
 export namespace TDS {
-  export const init = (params: {
-    appId: string;
-    appKey: string;
-    url: string;
-  }) => TDSService.init(params);
+  export const init = (params: { appKey: string; url: string }) =>
+    TDSService.init(params);
 
   export const Table = TableManager;
 
