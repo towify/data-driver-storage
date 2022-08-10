@@ -1494,7 +1494,7 @@
   dependencies:
     soid-data "0.0.83"
 
-"@towify-types/dsl@>=1.0.66":
+"@towify-types/dsl@>=1.0.66", "@towify-types/dsl@^1.0.85":
   version "1.0.85"
   resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.0.85.tgz#fb204768e025402a399d41c91e09772e5ba40afe"
   integrity sha512-VdhuMcheD2HCGIrHWnnmQ7/8MeTsf/J67JVeEb0U5gVk2Bjp86GyhE/Z07jePUgrkM6ypxfol1+KXGpzGqgtSQ==
@@ -1503,7 +1503,7 @@
     "@towify/common-values" "0.1.15"
     "@towify/type-helper" "0.0.2"
 
-"@towify-types/dsl@^1.0.37", "@towify-types/dsl@^1.0.4":
+"@towify-types/dsl@^1.0.4":
   version "1.0.53"
   resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.0.53.tgz#7c6c82754c0aeea0276fba48f9bc1c2e84cf6ace"
   integrity sha512-hq44iCBYIOOMdfePJOpB23mrG66Yh3OHNhcClPmYrgQq0Hm0AlV/Ycnj8y6PONbx992hPI95kF3HZRI+sfpo9g==
@@ -1556,15 +1556,15 @@
   dependencies:
     crypto-js "^4.1.1"
 
-"@towify/event-query-helper@^0.1.5":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@towify/event-query-helper/-/event-query-helper-0.1.9.tgz#e5b8cac6d0e426bfeecbf5db58063bdb40945afe"
-  integrity sha512-qZ7S0OoclwEwCTF5qv7zkxXZLH9uSN9lUXNAqbe4zWMhcX77gLhN9n4q1/tQAB7a69n+jxWEyMDrqTNBm/GpnA==
+"@towify/event-query-helper@^0.1.12":
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/@towify/event-query-helper/-/event-query-helper-0.1.12.tgz#90830030c2ef6ece43728dd94cca232e8da129f9"
+  integrity sha512-NAeMYRWiWU10Lgqoyh4U/ovN5DESdy+TgDL+VjsiA9A3azDKrX7bkSJREENMp/Hh72irJOW+EvS0MPZm5JxB3A==
   dependencies:
-    "@towify-types/dsl" "^1.0.37"
-    "@towify-types/live-data" "^0.2.28"
+    "@towify-types/dsl" "^1.0.85"
+    "@towify-types/live-data" "^0.2.31"
     "@towify/type-helper" "^0.0.2"
-    soid-data "^0.1.36"
+    soid-data "^0.1.40"
 
 "@towify/scf-engine@^0.4.4":
   version "0.4.4"
@@ -5615,7 +5615,7 @@ soid-data@0.0.83:
   optionalDependencies:
     dexie "^3.0.3"
 
-soid-data@^0.1.36, soid-data@^0.1.40:
+soid-data@^0.1.40:
   version "0.1.40"
   resolved "https://registry.yarnpkg.com/soid-data/-/soid-data-0.1.40.tgz#cd544b1eea39a86ac3b72c52034b000a8bfa7756"
   integrity sha512-S/UxQn5aKQwo0CSlRPDZXXhjMnjp0NRydzaDJii+sa8irP7jN4pf3hFynJediV5NmQsXXLWEmFHAQZRakApu+Q==
