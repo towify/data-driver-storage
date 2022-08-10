@@ -13,19 +13,17 @@ export class TDSService {
   }
 
   static init(params: {
-    readonly appId: string;
     readonly appKey: string;
     readonly url: string;
     readonly language?: 'zh-CN' | 'en';
+    readonly salt?: string;
   }) {
     this.instance = new TDSService();
     this.instance.scf = new ScfClientManager({
       apiUrl: params.url,
       language: params.language as any,
-      liveTableAccessInfo: {
-        appId: params.appId,
-        appKey: params.appKey
-      }
+      appKey: params.appKey,
+      salt: params.salt
     });
     return this;
   }
