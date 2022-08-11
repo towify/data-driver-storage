@@ -33,15 +33,15 @@
   "peerDependencies": {
     "@towify-serverless/scf-api": ">=0.6.54",
     "@towify-types/live-data": ">=0.2.31",
-    "@towify/event-query-helper": ">=0.1.12",
-    "@towify/scf-engine": ">=0.4.4",
+    "@towify/event-query-helper": ">=0.1.13",
+    "@towify/scf-engine": ">=0.4.6",
     "soid-data": ">=0.1.40"
   },
   "dependencies": {
     "@towify-serverless/scf-api": "^0.6.54",
     "@towify-types/live-data": "^0.2.31",
-    "@towify/event-query-helper": "^0.1.12",
-    "@towify/scf-engine": "^0.4.4",
+    "@towify/event-query-helper": "^0.1.13",
+    "@towify/scf-engine": "^0.4.6",
     "soid-data": "^0.1.40"
   },
   "devDependencies": {
