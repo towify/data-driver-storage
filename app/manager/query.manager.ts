@@ -178,7 +178,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  greaterThan(fieldPath: QueryFieldPathType, value: number): this {
+  greaterThan(fieldPath: QueryFieldPathType, value: number | Date): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -187,7 +187,10 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  greaterThanOrEqualTo(fieldPath: QueryFieldPathType, value: number): this {
+  greaterThanOrEqualTo(
+    fieldPath: QueryFieldPathType,
+    value: number | Date
+  ): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -196,7 +199,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  lessThan(fieldPath: QueryFieldPathType, value: number): this {
+  lessThan(fieldPath: QueryFieldPathType, value: number | Date): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -205,7 +208,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  lessThanOrEqualTo(fieldPath: QueryFieldPathType, value: number): this {
+  lessThanOrEqualTo(fieldPath: QueryFieldPathType, value: number | Date): this {
     this.#queries.push({
       fieldPath,
       value,
