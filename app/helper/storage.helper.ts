@@ -145,6 +145,18 @@ export class StorageHelper {
 
   static async updateRowsWithQueries(params: {
     tableHashName: string;
+    pageCount: number;
+    pageIndex: number;
+    precondition?: {
+      needToken: boolean;
+      queries: QueryFilterDetailType[];
+    };
+    queries?: {
+      fieldPath: QueryFieldPathType;
+      value: FieldValueType | FieldValueType[];
+      condition: QueryConditionEnum;
+    }[];
+    executorId: string;
     fieldInfo: {
       hashName: string;
       isIncrement?: boolean;
@@ -161,6 +173,13 @@ export class StorageHelper {
         incrementData[info.hashName] = <number>info.content;
       } else {
         data[info.hashName] = info.content;
+      }
+    });
+    const findContent = EventQueryHelper.convertToScfFindContent({
+      tableHashName: params.tableHashName,
+      preconditions: params.precondition,
+      executor: {
+        queries: params.queries || []
       }
     });
     const response =

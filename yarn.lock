@@ -1556,10 +1556,10 @@
   dependencies:
     crypto-js "^4.1.1"
 
-"@towify/event-query-helper@^0.1.14":
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/@towify/event-query-helper/-/event-query-helper-0.1.14.tgz#04110ffd7a0e6b5e31a4b75150116a66c1a4c945"
-  integrity sha512-13jPuNGMaJoX/oDSc99mphdQqBO+qlumFk3YBlsCO8vuNlwxpPbf23AM8Qd+7IGzocWhL0FiiS1AnRecLfvErQ==
+"@towify/event-query-helper@^0.1.16":
+  version "0.1.16"
+  resolved "https://registry.yarnpkg.com/@towify/event-query-helper/-/event-query-helper-0.1.16.tgz#f6ee7e79764eddbaff7ad99ca0326f3df42eac03"
+  integrity sha512-k7elpMS4qN9FrydjwluqtLMQvOnjROiYYUlFVTf69Bl7xH5+nVyuhJBRqCga2EBzItpN7v1hBg92FMnRe/K2sA==
   dependencies:
     "@towify-types/dsl" "^1.0.85"
     "@towify-types/live-data" "^0.2.31"
