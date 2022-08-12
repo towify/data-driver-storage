@@ -143,6 +143,41 @@ export class StorageHelper {
     return response?.errorMessage;
   }
 
+  static async updateRowsWithQueries(params: {
+    tableHashName: string;
+    fieldInfo: {
+      hashName: string;
+      isIncrement?: boolean;
+      content: FieldValueType;
+    }[];
+    ignoreToken?: boolean;
+  }) {
+    const filter: QueryFilterType = {};
+    const data: LiveObjectType = {};
+    let incrementData: { [fieldHashName: string]: number } | undefined;
+    params.fieldInfo.forEach(info => {
+      if (info.isIncrement) {
+        incrementData ??= {};
+        incrementData[info.hashName] = <number>info.content;
+      } else {
+        data[info.hashName] = info.content;
+      }
+    });
+    const response =
+      await TDSService.instance.scf.call<SCF.LiveTableUpdateItem>({
+        path: '/livetable/data/update',
+        params: {
+          tableId: params.tableHashName,
+          filter,
+          data,
+          incrementData
+        },
+        method: 'post',
+        ignoreToken: params.ignoreToken === true
+      });
+    return response.errorMessage;
+  }
+
   static async updateRow(params: {
     tableHashName: string;
     rowId: string;
