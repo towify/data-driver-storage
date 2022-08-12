@@ -164,7 +164,6 @@ export class StorageHelper {
     }[];
     ignoreToken?: boolean;
   }) {
-    const filter: QueryFilterType = {};
     const data: LiveObjectType = {};
     let incrementData: { [fieldHashName: string]: number } | undefined;
     params.fieldInfo.forEach(info => {
@@ -186,8 +185,7 @@ export class StorageHelper {
       await TDSService.instance.scf.call<SCF.LiveTableUpdateItem>({
         path: '/livetable/data/update',
         params: {
-          tableId: params.tableHashName,
-          filter,
+          ...findContent.executor.query,
           data,
           incrementData
         },
