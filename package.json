@@ -33,29 +33,29 @@
   "peerDependencies": {
     "@towify-serverless/scf-api": ">=0.6.55",
     "@towify-types/live-data": ">=0.2.31",
-    "@towify/event-query-helper": ">=0.1.16",
+    "@towify/event-query-helper": ">=0.1.17",
     "@towify/scf-engine": ">=0.4.7",
-    "soid-data": ">=0.1.40"
+    "soid-data": ">=0.2.0"
   },
   "dependencies": {
     "@towify-serverless/scf-api": "^0.6.55",
     "@towify-types/live-data": "^0.2.31",
-    "@towify/event-query-helper": "^0.1.16",
+    "@towify/event-query-helper": "^0.1.17",
     "@towify/scf-engine": "^0.4.7",
-    "soid-data": "^0.1.40"
+    "soid-data": "^0.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.9",
-    "@babel/plugin-transform-runtime": "^7.18.9",
-    "@babel/preset-env": "^7.18.9",
+    "@babel/core": "^7.18.10",
+    "@babel/plugin-transform-runtime": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
     "@types/jest": "26.0.24",
     "@types/node": "^17.0.45",
-    "@typescript-eslint/eslint-plugin": "^5.30.7",
-    "@typescript-eslint/eslint-plugin-tslint": "^5.30.7",
-    "@typescript-eslint/parser": "^5.30.7",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.5",
-    "eslint": "^8.20.0",
+    "eslint": "^8.22.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
