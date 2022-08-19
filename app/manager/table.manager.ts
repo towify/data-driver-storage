@@ -5,13 +5,12 @@
 import { ITableManager } from './table-manager.interface';
 import { FieldValueType, LiveObjectType } from '@towify-types/live-data';
 import { QueryManager } from './query.manager';
-import { TDSManager } from '../service/tds.manager';
+import { TDSManager } from './tds.manager';
 
 export class TableManager implements ITableManager {
   #fieldData: LiveObjectType = {};
 
-  constructor(private readonly tableHashName: string) {
-  }
+  constructor(private readonly tableHashName: string) {}
 
   get query(): QueryManager {
     return new QueryManager(this.tableHashName);

@@ -12,7 +12,7 @@ import {
   SortEnum
 } from '@towify-types/live-data';
 import { NanoIdHelper } from 'soid-data';
-import { TDSManager } from '../service/tds.manager';
+import { TDSManager } from './tds.manager';
 
 export class QueryManager implements IQueryManager {
   #data: {

@@ -4,24 +4,15 @@
  */
 import { TDS } from '../tds.namespace';
 import { SCF } from '@towify-serverless/scf-api';
-<<<<<<< HEAD
-import { TdsManager } from '../service/tds.manager';
+import { TDSManager } from '../manager/tds.manager';
 
 const getSecret = async () => {
-  const response =
-    await TdsManager.instance.scf.call<SCF.LiveTableGetAccessInfo>({
-=======
-import { TdsManager } from '../service/tds.manager';
-
-const getSecret = async () => {
-  const response =
-    await TdsManager.instance.scf.call<SCF.LiveTableGetAccessInfo>({
->>>>>>> 34a5614f74c849426dde53010448c9bcafeae9a0
-      path: '/livetable/access/get',
-      params: { projectId: '' },
-      method: 'post',
-      ignoreToken: false
-    });
+  const response = await TDSManager.scf.call<SCF.LiveTableGetAccessInfo>({
+    path: '/livetable/access/get',
+    params: { projectId: '' },
+    method: 'post',
+    ignoreToken: false
+  });
   console.log(response, 'response');
 };
 
@@ -30,7 +21,6 @@ const service = async () => {
   localStorage.setItem('towify-dynamic-salt', salt);
   return TDS.init({
     url: 'https://api-test.towify.com',
-    appId: '39ff59b26a832b6391450df5903404fc',
     appKey: 'd9d15be509d1acd154dbe3e2fdbf0950'
   });
 };

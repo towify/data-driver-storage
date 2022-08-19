@@ -77,17 +77,16 @@ export class TDSManager {
         skip: params.pageCount * params.pageIndex
       }
     });
-    const response =
-      await TDSManager.scf.call<SCF.LiveTableFindTableItems>({
-        path: '/livetable/data/find',
-        params: {
-          content: findContent,
-          executorId: params.executorId,
-          token: params.customerToken
-        },
-        method: 'post',
-        ignoreToken: params.ignoreToken === true
-      });
+    const response = await TDSManager.scf.call<SCF.LiveTableFindTableItems>({
+      path: '/livetable/data/find',
+      params: {
+        content: findContent,
+        executorId: params.executorId,
+        token: params.customerToken
+      },
+      method: 'post',
+      ignoreToken: params.ignoreToken === true
+    });
     if (response.errorMessage || !response.data) {
       return { message: response.errorMessage };
     }
@@ -125,22 +124,21 @@ export class TDSManager {
         skip: 0
       }
     });
-    const response =
-      await TDSManager.scf.call<SCF.LiveTableCountTableItems>({
-        path: '/livetable/data/count',
-        params: {
-          content: {
-            precondition: findContent.precondition,
-            executor: {
-              query: findContent.executor.query
-            }
-          },
-          executorId: params.executorId,
-          token: params.customerToken
+    const response = await TDSManager.scf.call<SCF.LiveTableCountTableItems>({
+      path: '/livetable/data/count',
+      params: {
+        content: {
+          precondition: findContent.precondition,
+          executor: {
+            query: findContent.executor.query
+          }
         },
-        method: 'post',
-        ignoreToken: params.ignoreToken === true
-      });
+        executorId: params.executorId,
+        token: params.customerToken
+      },
+      method: 'post',
+      ignoreToken: params.ignoreToken === true
+    });
     if (response.errorMessage || response.data?.count === undefined)
       return { message: response.errorMessage };
     return { count: response.data.count };
@@ -156,16 +154,15 @@ export class TDSManager {
     const condition: { [condition: string]: string[] } = {};
     condition.$in = params.ids;
     filter._id = condition;
-    const response =
-      await TDSManager.scf.call<SCF.LiveTableDeleteItem>({
-        path: '/livetable/data/delete',
-        params: {
-          tableId: params.tableHashName,
-          filter
-        },
-        method: 'post',
-        ignoreToken: params.ignoreToken === true
-      });
+    const response = await TDSManager.scf.call<SCF.LiveTableDeleteItem>({
+      path: '/livetable/data/delete',
+      params: {
+        tableId: params.tableHashName,
+        filter
+      },
+      method: 'post',
+      ignoreToken: params.ignoreToken === true
+    });
     return response?.errorMessage;
   }
 
@@ -199,17 +196,16 @@ export class TDSManager {
         queries: params.queries || []
       }
     });
-    const response =
-      await TDSManager.scf.call<SCF.LiveTableUpdateItem>({
-        path: '/livetable/data/update',
-        params: {
-          ...findContent.executor.query,
-          data,
-          incrementData
-        },
-        method: 'post',
-        ignoreToken: params.ignoreToken === true
-      });
+    const response = await TDSManager.scf.call<SCF.LiveTableUpdateItem>({
+      path: '/livetable/data/update',
+      params: {
+        ...findContent.executor.query,
+        data,
+        incrementData
+      },
+      method: 'post',
+      ignoreToken: params.ignoreToken === true
+    });
     return response.errorMessage;
   }
 
@@ -235,18 +231,17 @@ export class TDSManager {
         data[info.hashName] = info.content;
       }
     });
-    const response =
-      await TDSManager.scf.call<SCF.LiveTableUpdateItem>({
-        path: '/livetable/data/update',
-        params: {
-          tableId: params.tableHashName,
-          filter,
-          data,
-          incrementData
-        },
-        method: 'post',
-        ignoreToken: params.ignoreToken === true
-      });
+    const response = await TDSManager.scf.call<SCF.LiveTableUpdateItem>({
+      path: '/livetable/data/update',
+      params: {
+        tableId: params.tableHashName,
+        filter,
+        data,
+        incrementData
+      },
+      method: 'post',
+      ignoreToken: params.ignoreToken === true
+    });
     return response.errorMessage;
   }
 }

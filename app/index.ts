@@ -4,3 +4,4 @@
  */
 
 export * from './tds.namespace';
+export * from './manager/tds.manager';
