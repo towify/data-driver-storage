@@ -41,7 +41,10 @@ export class QueryManager implements IQueryManager {
 
   #sorts: { fieldHashName?: string; type: SortEnum }[] = [];
 
-  constructor(private readonly tableHashName: string) {
+  constructor(
+    private readonly tableHashName: string,
+    private readonly tds: TDSManager
+  ) {
     this.#data = {
       precondition: {
         needToken: false,
@@ -69,7 +72,7 @@ export class QueryManager implements IQueryManager {
     this.#prepareData();
     this.#data.ignoreToken = true;
     console.debug(this.#data, 'TOWIFY STORAGE: find method parameters.');
-    const result = await TDSManager.find({
+    const result = await this.tds.find({
       tableHashName: this.tableHashName,
       ...this.#data
     });
@@ -82,7 +85,7 @@ export class QueryManager implements IQueryManager {
     data?: LiveObjectType;
   }> {
     this.#prepareData();
-    const result = await TDSManager.find({
+    const result = await this.tds.find({
       tableHashName: this.tableHashName,
       ...this.#data
     });
@@ -92,7 +95,7 @@ export class QueryManager implements IQueryManager {
 
   async count(): Promise<{ message?: string; count?: number }> {
     this.#prepareData();
-    const result = await TDSManager.count({
+    const result = await this.tds.count({
       tableHashName: this.tableHashName,
       ...this.#data
     });

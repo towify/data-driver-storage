@@ -17,7 +17,7 @@ import { EventQueryHelper } from '@towify/event-query-helper';
 import { SCF } from '@towify-serverless/scf-api';
 
 export class TDSManager {
-  public static scf: ScfClientManager;
+  public readonly scf: ScfClientManager;
 
   constructor(params: {
     readonly appKey: string;
@@ -25,7 +25,7 @@ export class TDSManager {
     readonly language?: 'zh-CN' | 'en';
     readonly salt?: string;
   }) {
-    TDSManager.scf = new ScfClientManager({
+    this.scf = new ScfClientManager({
       apiUrl: params.url,
       language: params.language as any,
       appKey: params.appKey,
@@ -34,16 +34,16 @@ export class TDSManager {
   }
 
   resetToken(token: string) {
-    TDSManager.scf.token = token;
+    this.scf.token = token;
     return this;
   }
 
   resetAppKey(appKey: string) {
-    TDSManager.scf.appKey = appKey;
+    this.scf.appKey = appKey;
     return this;
   }
 
-  static async find(params: {
+  async find(params: {
     tableHashName: string;
     pageCount: number;
     pageIndex: number;
@@ -77,7 +77,7 @@ export class TDSManager {
         skip: params.pageCount * params.pageIndex
       }
     });
-    const response = await TDSManager.scf.call<SCF.LiveTableFindTableItems>({
+    const response = await this.scf.call<SCF.LiveTableFindTableItems>({
       path: '/livetable/data/find',
       params: {
         content: findContent,
@@ -96,7 +96,7 @@ export class TDSManager {
     return { data: response.data };
   }
 
-  static async count(params: {
+  async count(params: {
     tableHashName: string;
     precondition?: {
       needToken: boolean;
@@ -124,7 +124,7 @@ export class TDSManager {
         skip: 0
       }
     });
-    const response = await TDSManager.scf.call<SCF.LiveTableCountTableItems>({
+    const response = await this.scf.call<SCF.LiveTableCountTableItems>({
       path: '/livetable/data/count',
       params: {
         content: {
@@ -144,7 +144,7 @@ export class TDSManager {
     return { count: response.data.count };
   }
 
-  static async removeRow(params: {
+  async removeRow(params: {
     tableHashName: string;
     ids: string[];
     ignoreToken?: boolean;
@@ -154,7 +154,7 @@ export class TDSManager {
     const condition: { [condition: string]: string[] } = {};
     condition.$in = params.ids;
     filter._id = condition;
-    const response = await TDSManager.scf.call<SCF.LiveTableDeleteItem>({
+    const response = await this.scf.call<SCF.LiveTableDeleteItem>({
       path: '/livetable/data/delete',
       params: {
         tableId: params.tableHashName,
@@ -166,7 +166,7 @@ export class TDSManager {
     return response?.errorMessage;
   }
 
-  static async updateRowsWithQueries(params: {
+  async updateRowsWithQueries(params: {
     tableHashName: string;
     queries?: {
       fieldPath: QueryFieldPathType;
@@ -196,7 +196,7 @@ export class TDSManager {
         queries: params.queries || []
       }
     });
-    const response = await TDSManager.scf.call<SCF.LiveTableUpdateItem>({
+    const response = await this.scf.call<SCF.LiveTableUpdateItem>({
       path: '/livetable/data/update',
       params: {
         ...findContent.executor.query,
@@ -209,7 +209,7 @@ export class TDSManager {
     return response.errorMessage;
   }
 
-  static async updateRow(params: {
+  async updateRow(params: {
     tableHashName: string;
     rowId: string;
     fieldInfo: {
@@ -231,7 +231,7 @@ export class TDSManager {
         data[info.hashName] = info.content;
       }
     });
-    const response = await TDSManager.scf.call<SCF.LiveTableUpdateItem>({
+    const response = await this.scf.call<SCF.LiveTableUpdateItem>({
       path: '/livetable/data/update',
       params: {
         tableId: params.tableHashName,

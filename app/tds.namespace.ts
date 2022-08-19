@@ -6,12 +6,6 @@ import { TableManager } from './manager/table.manager';
 import { TDSManager } from './manager/tds.manager';
 
 export namespace TDS {
-  export const init = (params: {
-    readonly appKey: string;
-    readonly url: string;
-    readonly language?: 'zh-CN' | 'en';
-    readonly salt?: string;
-  }) => new TDSManager(params);
-
+  export const Manager = TDSManager;
   export const Table = TableManager;
 }

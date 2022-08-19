@@ -10,14 +10,17 @@ import { TDSManager } from './tds.manager';
 export class TableManager implements ITableManager {
   #fieldData: LiveObjectType = {};
 
-  constructor(private readonly tableHashName: string) {}
+  constructor(
+    private readonly tableHashName: string,
+    private readonly tds: TDSManager
+  ) {}
 
   get query(): QueryManager {
-    return new QueryManager(this.tableHashName);
+    return new QueryManager(this.tableHashName, this.tds);
   }
 
   async removeRow(...rowIds: string[]): Promise<string | undefined> {
-    return TDSManager.removeRow({
+    return this.tds?.removeRow({
       tableHashName: this.tableHashName,
       ids: rowIds,
       ignoreToken: true
@@ -37,7 +40,7 @@ export class TableManager implements ITableManager {
       content: FieldValueType;
     }[]
   ): Promise<string | undefined> {
-    return TDSManager.updateRow({
+    return this.tds?.updateRow({
       tableHashName: this.tableHashName,
       rowId,
       fieldInfo,
