@@ -3,8 +3,7 @@
  * @date 24 Jul, 2022
  */
 import { TableManager } from './manager/table.manager';
-import { StorageHelper } from './helper/storage.helper';
-import { TDSManager } from './service/TDSManager';
+import { TDSManager } from './service/tds.manager';
 
 export namespace TDS {
   export const init = (params: {
@@ -15,6 +14,4 @@ export namespace TDS {
   }) => new TDSManager(params);
 
   export const Table = TableManager;
-
-  export const Helper = StorageHelper;
 }

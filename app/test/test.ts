@@ -11,11 +11,11 @@ const getSecret = async () => {
   const response =
     await TdsManager.instance.scf.call<SCF.LiveTableGetAccessInfo>({
 =======
-import { TDSManager } from '../service/TDSManager';
+import { TdsManager } from '../service/tds.manager';
 
 const getSecret = async () => {
   const response =
-    await TDSManager.instance.scf.call<SCF.LiveTableGetAccessInfo>({
+    await TdsManager.instance.scf.call<SCF.LiveTableGetAccessInfo>({
 >>>>>>> 34a5614f74c849426dde53010448c9bcafeae9a0
       path: '/livetable/access/get',
       params: { projectId: '' },

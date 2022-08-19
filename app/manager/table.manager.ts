@@ -5,19 +5,20 @@
 import { ITableManager } from './table-manager.interface';
 import { FieldValueType, LiveObjectType } from '@towify-types/live-data';
 import { QueryManager } from './query.manager';
-import { StorageHelper } from '../helper/storage.helper';
+import { TDSManager } from '../service/tds.manager';
 
 export class TableManager implements ITableManager {
   #fieldData: LiveObjectType = {};
 
-  constructor(private readonly tableHashName: string) {}
+  constructor(private readonly tableHashName: string) {
+  }
 
   get query(): QueryManager {
     return new QueryManager(this.tableHashName);
   }
 
   async removeRow(...rowIds: string[]): Promise<string | undefined> {
-    return StorageHelper.removeRow({
+    return TDSManager.removeRow({
       tableHashName: this.tableHashName,
       ids: rowIds,
       ignoreToken: true
@@ -37,7 +38,7 @@ export class TableManager implements ITableManager {
       content: FieldValueType;
     }[]
   ): Promise<string | undefined> {
-    return StorageHelper.updateRow({
+    return TDSManager.updateRow({
       tableHashName: this.tableHashName,
       rowId,
       fieldInfo,
