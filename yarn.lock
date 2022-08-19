@@ -1559,7 +1559,7 @@
     "@towify-types/third-party" ">=0.0.3"
     "@towify-types/user" ">=0.0.31"
 
-"@towify-serverless/scf-api@^0.6.62":
+"@towify-serverless/scf-api@^0.6.65":
   version "0.6.66"
   resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.6.66.tgz#295d03a844bf3564bb0eafe216a5105379d20205"
   integrity sha512-jv6Gmp2iD/687Q9UWrGZ0twh5DXyIKbCsX7ZHzYStQIX34j3eWweysNcmmida2t9aP/fXIVGkT0YUATyMILHdA==

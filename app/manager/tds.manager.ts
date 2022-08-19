@@ -148,6 +148,7 @@ export class TDSManager {
     tableHashName: string;
     ids: string[];
     ignoreToken?: boolean;
+    client?: 'Simulator' | 'DataDriver';
   }): Promise<string | undefined> {
     const filter: { [id: string]: { [condition: string]: string[] } } = {};
     // 删除多条拼出一个 in 的查找 filter
@@ -158,7 +159,8 @@ export class TDSManager {
       path: '/livetable/data/delete',
       params: {
         tableId: params.tableHashName,
-        filter
+        filter,
+        client: params.client
       },
       method: 'post',
       ignoreToken: params.ignoreToken === true
@@ -179,6 +181,7 @@ export class TDSManager {
       content: FieldValueType;
     }[];
     ignoreToken?: boolean;
+    client?: 'Simulator' | 'DataDriver';
   }) {
     const data: LiveObjectType = {};
     let incrementData: { [fieldHashName: string]: number } | undefined;
@@ -201,7 +204,8 @@ export class TDSManager {
       params: {
         ...findContent.executor.query,
         data,
-        incrementData
+        incrementData,
+        client: params.client
       },
       method: 'post',
       ignoreToken: params.ignoreToken === true
@@ -218,6 +222,7 @@ export class TDSManager {
       content: FieldValueType;
     }[];
     ignoreToken?: boolean;
+    client?: 'Simulator' | 'DataDriver';
   }): Promise<string | undefined> {
     const filter: QueryFilterType = {};
     const data: LiveObjectType = {};
@@ -237,7 +242,8 @@ export class TDSManager {
         tableId: params.tableHashName,
         filter,
         data,
-        incrementData
+        incrementData,
+        client: params.client
       },
       method: 'post',
       ignoreToken: params.ignoreToken === true
