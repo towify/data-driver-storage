@@ -4,11 +4,11 @@
  */
 import { TDS } from '../tds.namespace';
 import { SCF } from '@towify-serverless/scf-api';
-import { TDSService } from '../service/tds.service';
+import { TDSManager } from '../service/TDSManager';
 
 const getSecret = async () => {
   const response =
-    await TDSService.instance.scf.call<SCF.LiveTableGetAccessInfo>({
+    await TDSManager.instance.scf.call<SCF.LiveTableGetAccessInfo>({
       path: '/livetable/access/get',
       params: { projectId: '' },
       method: 'post',

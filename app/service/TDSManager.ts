@@ -4,31 +4,28 @@
  */
 import { ScfClientManager } from '@towify/scf-engine';
 
-export class TDSService {
-  public static instance: TDSService;
-  public scf!: ScfClientManager;
+export class TDSManager {
+  public readonly scf: ScfClientManager;
 
-  private constructor() {
-    // todo
-  }
-
-  static init(params: {
+  constructor(params: {
     readonly appKey: string;
     readonly url: string;
     readonly language?: 'zh-CN' | 'en';
     readonly salt?: string;
   }) {
-    this.instance = new TDSService();
-    this.instance.scf = new ScfClientManager({
+    this.scf = new ScfClientManager({
       apiUrl: params.url,
       language: params.language as any,
       appKey: params.appKey,
       salt: params.salt
     });
-    return this;
   }
 
   addToken(token: string) {
     this.scf.token = token;
+  }
+
+  resetAppKey(appKey: string) {
+    this.scf.appKey = appKey;
   }
 }

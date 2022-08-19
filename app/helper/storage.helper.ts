@@ -14,7 +14,7 @@ import {
 } from '@towify-types/live-data';
 import { EventQueryHelper } from '@towify/event-query-helper';
 import { SCF } from '@towify-serverless/scf-api';
-import { TDSService } from '../service/tds.service';
+import { TDSManager } from '../service/TDSManager';
 
 export class StorageHelper {
   static async find(params: {
@@ -52,7 +52,7 @@ export class StorageHelper {
       }
     });
     const response =
-      await TDSService.instance.scf.call<SCF.LiveTableFindTableItems>({
+      await TDSManager.instance.scf.call<SCF.LiveTableFindTableItems>({
         path: '/livetable/data/find',
         params: {
           content: findContent,
@@ -100,7 +100,7 @@ export class StorageHelper {
       }
     });
     const response =
-      await TDSService.instance.scf.call<SCF.LiveTableCountTableItems>({
+      await TDSManager.instance.scf.call<SCF.LiveTableCountTableItems>({
         path: '/livetable/data/count',
         params: {
           content: {
@@ -131,7 +131,7 @@ export class StorageHelper {
     condition.$in = params.ids;
     filter._id = condition;
     const response =
-      await TDSService.instance.scf.call<SCF.LiveTableDeleteItem>({
+      await TDSManager.instance.scf.call<SCF.LiveTableDeleteItem>({
         path: '/livetable/data/delete',
         params: {
           tableId: params.tableHashName,
@@ -174,7 +174,7 @@ export class StorageHelper {
       }
     });
     const response =
-      await TDSService.instance.scf.call<SCF.LiveTableUpdateItem>({
+      await TDSManager.instance.scf.call<SCF.LiveTableUpdateItem>({
         path: '/livetable/data/update',
         params: {
           ...findContent.executor.query,
@@ -210,7 +210,7 @@ export class StorageHelper {
       }
     });
     const response =
-      await TDSService.instance.scf.call<SCF.LiveTableUpdateItem>({
+      await TDSManager.instance.scf.call<SCF.LiveTableUpdateItem>({
         path: '/livetable/data/update',
         params: {
           tableId: params.tableHashName,
