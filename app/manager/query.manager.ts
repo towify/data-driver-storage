@@ -12,7 +12,7 @@ import {
   SortEnum
 } from '@towify-types/live-data';
 import { NanoIdHelper } from 'soid-data';
-import { StorageHelper } from '../helper/storage.helper';
+import { TDSManager } from '../service/tds.manager';
 
 export class QueryManager implements IQueryManager {
   #data: {
@@ -69,7 +69,7 @@ export class QueryManager implements IQueryManager {
     this.#prepareData();
     this.#data.ignoreToken = true;
     console.debug(this.#data, 'TOWIFY STORAGE: find method parameters.');
-    const result = await StorageHelper.find({
+    const result = await TDSManager.find({
       tableHashName: this.tableHashName,
       ...this.#data
     });
@@ -82,7 +82,7 @@ export class QueryManager implements IQueryManager {
     data?: LiveObjectType;
   }> {
     this.#prepareData();
-    const result = await StorageHelper.find({
+    const result = await TDSManager.find({
       tableHashName: this.tableHashName,
       ...this.#data
     });
@@ -92,7 +92,7 @@ export class QueryManager implements IQueryManager {
 
   async count(): Promise<{ message?: string; count?: number }> {
     this.#prepareData();
-    const result = await StorageHelper.count({
+    const result = await TDSManager.count({
       tableHashName: this.tableHashName,
       ...this.#data
     });
