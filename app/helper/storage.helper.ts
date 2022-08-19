@@ -14,7 +14,11 @@ import {
 } from '@towify-types/live-data';
 import { EventQueryHelper } from '@towify/event-query-helper';
 import { SCF } from '@towify-serverless/scf-api';
+<<<<<<< HEAD
 import { TDSManager } from '../service/tds.manager';
+=======
+import { TDSManager } from '../service/TDSManager';
+>>>>>>> 34a5614f74c849426dde53010448c9bcafeae9a0
 
 export class StorageHelper {
   static async find(params: {
@@ -51,6 +55,7 @@ export class StorageHelper {
         skip: params.pageCount * params.pageIndex
       }
     });
+<<<<<<< HEAD
     const response = await TDSManager.scf.call<SCF.LiveTableFindTableItems>({
       path: '/livetable/data/find',
       params: {
@@ -61,6 +66,19 @@ export class StorageHelper {
       method: 'post',
       ignoreToken: params.ignoreToken === true
     });
+=======
+    const response =
+      await TDSManager.instance.scf.call<SCF.LiveTableFindTableItems>({
+        path: '/livetable/data/find',
+        params: {
+          content: findContent,
+          executorId: params.executorId,
+          token: params.customerToken
+        },
+        method: 'post',
+        ignoreToken: params.ignoreToken === true
+      });
+>>>>>>> 34a5614f74c849426dde53010448c9bcafeae9a0
     if (response.errorMessage || !response.data) {
       return { message: response.errorMessage };
     }
@@ -98,6 +116,7 @@ export class StorageHelper {
         skip: 0
       }
     });
+<<<<<<< HEAD
     const response = await TDSManager.scf.call<SCF.LiveTableCountTableItems>({
       path: '/livetable/data/count',
       params: {
@@ -106,6 +125,20 @@ export class StorageHelper {
           executor: {
             query: findContent.executor.query
           }
+=======
+    const response =
+      await TDSManager.instance.scf.call<SCF.LiveTableCountTableItems>({
+        path: '/livetable/data/count',
+        params: {
+          content: {
+            precondition: findContent.precondition,
+            executor: {
+              query: findContent.executor.query
+            }
+          },
+          executorId: params.executorId,
+          token: params.customerToken
+>>>>>>> 34a5614f74c849426dde53010448c9bcafeae9a0
         },
         executorId: params.executorId,
         token: params.customerToken
@@ -128,6 +161,7 @@ export class StorageHelper {
     const condition: { [condition: string]: string[] } = {};
     condition.$in = params.ids;
     filter._id = condition;
+<<<<<<< HEAD
     const response = await TDSManager.scf.call<SCF.LiveTableDeleteItem>({
       path: '/livetable/data/delete',
       params: {
@@ -137,6 +171,18 @@ export class StorageHelper {
       method: 'post',
       ignoreToken: params.ignoreToken === true
     });
+=======
+    const response =
+      await TDSManager.instance.scf.call<SCF.LiveTableDeleteItem>({
+        path: '/livetable/data/delete',
+        params: {
+          tableId: params.tableHashName,
+          filter
+        },
+        method: 'post',
+        ignoreToken: params.ignoreToken === true
+      });
+>>>>>>> 34a5614f74c849426dde53010448c9bcafeae9a0
     return response?.errorMessage;
   }
 
@@ -170,6 +216,7 @@ export class StorageHelper {
         queries: params.queries || []
       }
     });
+<<<<<<< HEAD
     const response = await TDSManager.scf.call<SCF.LiveTableUpdateItem>({
       path: '/livetable/data/update',
       params: {
@@ -180,6 +227,19 @@ export class StorageHelper {
       method: 'post',
       ignoreToken: params.ignoreToken === true
     });
+=======
+    const response =
+      await TDSManager.instance.scf.call<SCF.LiveTableUpdateItem>({
+        path: '/livetable/data/update',
+        params: {
+          ...findContent.executor.query,
+          data,
+          incrementData
+        },
+        method: 'post',
+        ignoreToken: params.ignoreToken === true
+      });
+>>>>>>> 34a5614f74c849426dde53010448c9bcafeae9a0
     return response.errorMessage;
   }
 
@@ -205,6 +265,7 @@ export class StorageHelper {
         data[info.hashName] = info.content;
       }
     });
+<<<<<<< HEAD
     const response = await TDSManager.scf.call<SCF.LiveTableUpdateItem>({
       path: '/livetable/data/update',
       params: {
@@ -216,6 +277,20 @@ export class StorageHelper {
       method: 'post',
       ignoreToken: params.ignoreToken === true
     });
+=======
+    const response =
+      await TDSManager.instance.scf.call<SCF.LiveTableUpdateItem>({
+        path: '/livetable/data/update',
+        params: {
+          tableId: params.tableHashName,
+          filter,
+          data,
+          incrementData
+        },
+        method: 'post',
+        ignoreToken: params.ignoreToken === true
+      });
+>>>>>>> 34a5614f74c849426dde53010448c9bcafeae9a0
     return response.errorMessage;
   }
 }
