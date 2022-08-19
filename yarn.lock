@@ -1545,7 +1545,7 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@towify-serverless/scf-api@^0.6.54", "@towify-serverless/scf-api@^0.6.55":
+"@towify-serverless/scf-api@^0.6.55":
   version "0.6.55"
   resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.6.55.tgz#f9bdf33a2273b65bcfb11149d20386e3208e1c91"
   integrity sha512-IsVIDJQAqgWaPTuztRdDBF6btDSWKfiBRjPXIsnrP4VpvUGOWcZXJb0XDKmmtNnur3Nl/Z4O/NNZMrz0l8GoVQ==
@@ -1558,6 +1558,20 @@
     "@towify-types/resource" ">=0.1.3"
     "@towify-types/third-party" ">=0.0.3"
     "@towify-types/user" ">=0.0.31"
+
+"@towify-serverless/scf-api@^0.6.62":
+  version "0.6.66"
+  resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.6.66.tgz#295d03a844bf3564bb0eafe216a5105379d20205"
+  integrity sha512-jv6Gmp2iD/687Q9UWrGZ0twh5DXyIKbCsX7ZHzYStQIX34j3eWweysNcmmida2t9aP/fXIVGkT0YUATyMILHdA==
+  optionalDependencies:
+    "@towify-types/api-hub" ">=0.0.39"
+    "@towify-types/config" ">=0.0.8"
+    "@towify-types/dsl" ">=1.0.66"
+    "@towify-types/kit" ">=0.1.24"
+    "@towify-types/live-data" ">=0.2.30"
+    "@towify-types/resource" ">=0.1.3"
+    "@towify-types/third-party" ">=0.0.3"
+    "@towify-types/user" ">=0.0.33"
 
 "@towify-types/api-hub@>=0.0.39", "@towify-types/api-hub@>=0.0.6":
   version "0.0.39"
@@ -1630,6 +1644,11 @@
   resolved "https://registry.yarnpkg.com/@towify-types/user/-/user-0.0.31.tgz#57597951ecc1780d083824e5b65a7fff14a1a48c"
   integrity sha512-k1ap6zSUEkjXwOUm6YYwUfznh/tsGMESZWtdNHvjGrbbbe3p7cTVParyKQNk8RLkC9ZaR3SLi2pgkFca96rtLA==
 
+"@towify-types/user@>=0.0.33":
+  version "0.0.33"
+  resolved "https://registry.yarnpkg.com/@towify-types/user/-/user-0.0.33.tgz#d8cebe65619f5afab2fc43f21bc615f6724fc4c1"
+  integrity sha512-cLo4fnsF1xbQkkbBDFokVzY522hv2jGm2TjFuqEVYrZ+ugWa1ekoGvVrVj5gDMk7/rtDszIgfaWiBSHQPKBefQ==
+
 "@towify/common-values@0.1.15":
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/@towify/common-values/-/common-values-0.1.15.tgz#33e308b9267301607ddf9327217f52fc8b3d3908"
@@ -1652,14 +1671,14 @@
     "@towify/type-helper" "^0.0.2"
     soid-data "^0.2.0"
 
-"@towify/scf-engine@^0.4.7":
-  version "0.4.7"
-  resolved "https://registry.yarnpkg.com/@towify/scf-engine/-/scf-engine-0.4.7.tgz#d09af47ea6c750076668ee2725f0ff9130085013"
-  integrity sha512-9ogFLCYgg5JDoG+BNEPhARxWHc1j3PHioLhAcHvzDxNESV3BlCqlNL37QLhZnZbWGwRsZUO3GO9OQnuyUsp/iA==
+"@towify/scf-engine@^0.4.8":
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/@towify/scf-engine/-/scf-engine-0.4.8.tgz#0ea94a4ee71f28e665c6d9568b33f841848afdec"
+  integrity sha512-jU5ka5/B2dJaH3vkKi8fvwbJCg/amfbKAEbmvUkcWovHIXy4WH/TyxKOSiRKYXdgJ+iPhgcse8SM/MWQD1necA==
   dependencies:
-    "@towify-serverless/scf-api" "^0.6.54"
+    "@towify-serverless/scf-api" "^0.6.55"
     "@towify/encryptor" "^0.1.0"
-    soid-data "^0.1.40"
+    soid-data "^0.2.0"
   optionalDependencies:
     "@towify-types/api-hub" ">=0.0.6"
 
@@ -2771,7 +2790,7 @@ detect-newline@^3.0.0:
   resolved "https://registry.yarnpkg.com/detect-newline/-/detect-newline-3.1.0.tgz#576f5dfc63ae1a192ff192d8ad3af6308991b651"
   integrity sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==
 
-dexie@^3.0.3, dexie@^3.2.2:
+dexie@^3.0.3:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/dexie/-/dexie-3.2.2.tgz#fa6f2a3c0d6ed0766f8d97a03720056f88fe0e01"
   integrity sha512-q5dC3HPmir2DERlX+toCBbHQXW5MsyrFqPFcovkH9N2S/UW/H3H5AWAB6iEOExeraAu+j+zRDG+zg/D7YhH0qg==
@@ -5748,18 +5767,17 @@ soid-data@0.0.83:
   optionalDependencies:
     dexie "^3.0.3"
 
-soid-data@^0.1.40:
-  version "0.1.40"
-  resolved "https://registry.yarnpkg.com/soid-data/-/soid-data-0.1.40.tgz#cd544b1eea39a86ac3b72c52034b000a8bfa7756"
-  integrity sha512-S/UxQn5aKQwo0CSlRPDZXXhjMnjp0NRydzaDJii+sa8irP7jN4pf3hFynJediV5NmQsXXLWEmFHAQZRakApu+Q==
-  optionalDependencies:
-    dexie "^3.2.2"
-    nanoid "3.3.1"
-
 soid-data@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/soid-data/-/soid-data-0.2.0.tgz#b491a25e4cc58c62c81315721e160e7256f7866a"
   integrity sha512-NVcd2fkv6Yl6L+ZCnL9qWOBjQd48nPsu3exbDSB7/sXo46HVX0gd8CJZsMX/vHmda/Vrgoe+tzqOr5cl6wN4dw==
+  optionalDependencies:
+    nanoid "3.3.1"
+
+soid-data@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/soid-data/-/soid-data-0.2.1.tgz#b00cdeedd216364ba2df0c5444b4d12075d4eae3"
+  integrity sha512-9RL3l9EunC4mF0zN6+UqnsEOzgBSg0IrwqXjxMUwAfqb73GFVgK8FzpLnV4ADQfqob1Or8Vnvycy0WpC09lg/g==
   optionalDependencies:
     nanoid "3.3.1"
 

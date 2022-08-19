@@ -4,11 +4,15 @@
  */
 import { TableManager } from './manager/table.manager';
 import { StorageHelper } from './helper/storage.helper';
-import { TDSService } from './service/tds.service';
+import { TDSManager } from './service/tds.manager';
 
 export namespace TDS {
-  export const init = (params: { appKey: string; url: string }) =>
-    TDSService.init(params);
+  export const init = (params: {
+    readonly appKey: string;
+    readonly url: string;
+    readonly language?: 'zh-CN' | 'en';
+    readonly salt?: string;
+  }) => new TDSManager(params);
 
   export const Table = TableManager;
 
