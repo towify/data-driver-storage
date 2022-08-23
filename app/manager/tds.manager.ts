@@ -48,7 +48,7 @@ export class TDSManager {
    * @param params.needEncrypted
    * 如果是 password 或其他需要加密的值这里传 true
    * */
-  public async addRow(params: {
+  public async add(params: {
     tableHashName: string;
     row: LiveObjectType;
     client?: 'Simulator' | 'DataDriver';
@@ -69,7 +69,7 @@ export class TDSManager {
     return { row: response.data };
   }
 
-  public async addBulkRows(params: {
+  public async bulkAdd(params: {
     tableHashName: string;
     rows: LiveObjectType[];
     client?: 'Simulator' | 'DataDriver';
