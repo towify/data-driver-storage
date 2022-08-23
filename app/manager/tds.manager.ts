@@ -15,6 +15,7 @@ import {
 } from '@towify-types/live-data';
 import { EventQueryHelper } from '@towify/event-query-helper';
 import { SCF } from '@towify-serverless/scf-api';
+import { Md5 } from 'soid-data';
 
 export class TDSManager {
   public readonly scf: ScfClientManager;
@@ -41,6 +42,52 @@ export class TDSManager {
   resetAppKey(appKey: string) {
     this.scf.appKey = appKey;
     return this;
+  }
+
+  /**
+   * @param params.needEncrypted
+   * 如果是 password 或其他需要加密的值这里传 true
+   * */
+  public async addRow(params: {
+    tableHashName: string;
+    row: LiveObjectType;
+    client?: 'Simulator' | 'DataDriver';
+    needEncrypted?: boolean;
+  }): Promise<{ message?: string; row?: LiveObjectType }> {
+    const response = await this.scf.call<SCF.LiveTableCreateItem>({
+      path: '/livetable/data/createOne',
+      params: {
+        tableId: params.tableHashName,
+        data: this.#formatRowValue(params.row, params.needEncrypted),
+        client: params.client
+      },
+      method: 'post',
+      ignoreToken: false
+    });
+    if (response.errorMessage || !response.data)
+      return { message: response.errorMessage };
+    return { row: response.data };
+  }
+
+  public async addBulkRows(params: {
+    tableHashName: string;
+    rows: LiveObjectType[];
+    client?: 'Simulator' | 'DataDriver';
+  }): Promise<{ message?: string; data?: LiveObjectType[] }> {
+    const { errorMessage, data } =
+      await this.scf.call<SCF.LiveTableCreateBulkItems>({
+        path: '/livetable/data/createMany',
+        params: {
+          tableId: params.tableHashName,
+          data: params.rows.map(row => this.#formatRowValue(row))
+        },
+        method: 'post',
+        ignoreToken: false
+      });
+    // eslint-disable-next-line no-console
+    console.debug('TOWIFY DEBUG: from tds engine', data);
+    if (errorMessage || !data) return { message: errorMessage };
+    else return { data };
   }
 
   async find(params: {
@@ -249,5 +296,18 @@ export class TDSManager {
       ignoreToken: params.ignoreToken === true
     });
     return response.errorMessage;
+  }
+
+  /**
+   * 有些 Row 的 Value 在 LiveTable 中的显示需要特殊处理，例如密码，这里要做的就是
+   * 把这些特殊显示的值甄别出来并加以加工
+   * */
+  #formatRowValue(row: LiveObjectType, needEncrypt?: boolean) {
+    for (const [fieldHashName, value] of Object.entries(row)) {
+      if (needEncrypt) {
+        row[fieldHashName] = <string>Md5.hashStr(<string>value);
+      }
+    }
+    return row;
   }
 }
