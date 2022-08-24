@@ -32,6 +32,17 @@ export class TableManager implements ITableManager {
     return this;
   }
 
+  public async add(
+    row: LiveObjectType,
+    needEncrypted?: boolean
+  ): Promise<{ message?: string; row?: LiveObjectType }> {
+    return this.tds?.add({
+      tableHashName: this.tableHashName,
+      row,
+      needEncrypted
+    });
+  }
+
   async updateRow(
     rowId: string,
     ...fieldInfo: {
