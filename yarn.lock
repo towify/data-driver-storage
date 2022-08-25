@@ -1559,19 +1559,19 @@
     "@towify-types/third-party" ">=0.0.3"
     "@towify-types/user" ">=0.0.31"
 
-"@towify-serverless/scf-api@^0.6.65":
-  version "0.6.66"
-  resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.6.66.tgz#295d03a844bf3564bb0eafe216a5105379d20205"
-  integrity sha512-jv6Gmp2iD/687Q9UWrGZ0twh5DXyIKbCsX7ZHzYStQIX34j3eWweysNcmmida2t9aP/fXIVGkT0YUATyMILHdA==
+"@towify-serverless/scf-api@^0.6.84":
+  version "0.6.84"
+  resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.6.84.tgz#1893b92394005c9fcc87d8def5396c67716cbbae"
+  integrity sha512-BvGfV0uo3XriRRh82y2a1DWuvTL0tmg+ZIsXiBogM6lydUxyL0doFzhsOkXj3TbwqQExy6IVwPk4QtSjk3/y9g==
   optionalDependencies:
     "@towify-types/api-hub" ">=0.0.39"
     "@towify-types/config" ">=0.0.8"
-    "@towify-types/dsl" ">=1.0.66"
-    "@towify-types/kit" ">=0.1.24"
+    "@towify-types/dsl" ">=1.1.14"
+    "@towify-types/kit" ">=0.1.27"
     "@towify-types/live-data" ">=0.2.30"
     "@towify-types/resource" ">=0.1.3"
     "@towify-types/third-party" ">=0.0.3"
-    "@towify-types/user" ">=0.0.33"
+    "@towify-types/user" ">=0.1.1"
 
 "@towify-types/api-hub@>=0.0.39", "@towify-types/api-hub@>=0.0.6":
   version "0.0.39"
@@ -1589,6 +1589,15 @@
   version "1.0.85"
   resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.0.85.tgz#fb204768e025402a399d41c91e09772e5ba40afe"
   integrity sha512-VdhuMcheD2HCGIrHWnnmQ7/8MeTsf/J67JVeEb0U5gVk2Bjp86GyhE/Z07jePUgrkM6ypxfol1+KXGpzGqgtSQ==
+  dependencies:
+    "@towify-types/live-data" "^0.2.31"
+    "@towify/common-values" "0.1.15"
+    "@towify/type-helper" "0.0.2"
+
+"@towify-types/dsl@>=1.1.14", "@towify-types/dsl@^1.0.100":
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.1.14.tgz#c093aa7798ca3536acf03317347635e0a0f17525"
+  integrity sha512-lpzNhuQiZHrjA/vHqNS41w7EjCIUVWlAhJPMZyK/dTakdn95QuPk5dwwHJpdYb45exFF/9MZSuP+rWN0r8quow==
   dependencies:
     "@towify-types/live-data" "^0.2.31"
     "@towify/common-values" "0.1.15"
@@ -1619,6 +1628,13 @@
   dependencies:
     "@towify-types/dsl" "^1.0.4"
 
+"@towify-types/kit@>=0.1.27":
+  version "0.1.27"
+  resolved "https://registry.yarnpkg.com/@towify-types/kit/-/kit-0.1.27.tgz#73d52fc2aba06f305218adc9fe05bbd2ac83fadf"
+  integrity sha512-TgvZEo/SHh+3vXTRwwFcmyToDaie8DE07Pcmf9uvmFAbWTHCYTwyJIKQm7U50JQED3OnEpfFlUWqoPWXlXDGuw==
+  dependencies:
+    "@towify-types/dsl" "^1.0.100"
+
 "@towify-types/live-data@>=0.2.30", "@towify-types/live-data@^0.2.31":
   version "0.2.31"
   resolved "https://registry.yarnpkg.com/@towify-types/live-data/-/live-data-0.2.31.tgz#f22dc7ec401af2e22977b8da2d24e624677ae131"
@@ -1628,6 +1644,11 @@
   version "0.2.29"
   resolved "https://registry.yarnpkg.com/@towify-types/live-data/-/live-data-0.2.29.tgz#7a8c54e48f733f558661d211cf25453228a80dbe"
   integrity sha512-8recFrOu6bb51/RCLciToVz1t4WUmjT8Jh4USGb6iAWp0OSmzT6mxBa+KoL2gkZXfXGMd2FZlgly2hbtonuA2w==
+
+"@towify-types/live-data@^0.2.32":
+  version "0.2.32"
+  resolved "https://registry.yarnpkg.com/@towify-types/live-data/-/live-data-0.2.32.tgz#f8976eaa268a43b5e5e899947921351e844d1846"
+  integrity sha512-6vk5SMSlPfBqZTA0u4f/1O6naVG+Nzn4jLh05unv63EMhCmCNUBZTor0ZN1QKmbAOflj7hQt9WwVNX6fbyFwUA==
 
 "@towify-types/resource@>=0.1.3":
   version "0.1.3"
@@ -1644,10 +1665,10 @@
   resolved "https://registry.yarnpkg.com/@towify-types/user/-/user-0.0.31.tgz#57597951ecc1780d083824e5b65a7fff14a1a48c"
   integrity sha512-k1ap6zSUEkjXwOUm6YYwUfznh/tsGMESZWtdNHvjGrbbbe3p7cTVParyKQNk8RLkC9ZaR3SLi2pgkFca96rtLA==
 
-"@towify-types/user@>=0.0.33":
-  version "0.0.33"
-  resolved "https://registry.yarnpkg.com/@towify-types/user/-/user-0.0.33.tgz#d8cebe65619f5afab2fc43f21bc615f6724fc4c1"
-  integrity sha512-cLo4fnsF1xbQkkbBDFokVzY522hv2jGm2TjFuqEVYrZ+ugWa1ekoGvVrVj5gDMk7/rtDszIgfaWiBSHQPKBefQ==
+"@towify-types/user@>=0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@towify-types/user/-/user-0.1.1.tgz#12284671b4195dd944d41720026ccc0947d5bfd5"
+  integrity sha512-WzsvOgOUfIBjcprvsRiECePUgmAM7022/uTGO0P4BsoLzUjWEAqPBcGxoApSJiP4mavxAslcg0c51Mqz6BHWRw==
 
 "@towify/common-values@0.1.15":
   version "0.1.15"

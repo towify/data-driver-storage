@@ -131,6 +131,15 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
+  containsIn(fieldPath: QueryFieldPathType, value: string[]): this {
+    this.#queries.push({
+      fieldPath,
+      value,
+      condition: QueryConditionEnum.ContainsIn
+    });
+    return this;
+  }
+
   doesNotContain(fieldPath: QueryFieldPathType, value: string): this {
     this.#queries.push({
       fieldPath,
