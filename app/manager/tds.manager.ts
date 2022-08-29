@@ -107,6 +107,7 @@ export class TDSManager {
     executorId: string;
     customerToken: string;
     ignoreToken?: boolean;
+    client?: 'Simulator' | 'DataDriver';
   }): Promise<{
     message?: string;
     data?: { list: LiveObjectType[]; count?: number };
@@ -129,7 +130,8 @@ export class TDSManager {
       params: {
         content: findContent,
         executorId: params.executorId,
-        token: params.customerToken
+        token: params.customerToken,
+        client: params.client
       },
       method: 'post',
       ignoreToken: params.ignoreToken === true
