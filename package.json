@@ -31,18 +31,18 @@
     "*.{js,css,md,json,scss}": "prettier --write"
   },
   "peerDependencies": {
-    "@towify-serverless/scf-api": ">=0.7.8",
+    "@towify-serverless/scf-api": ">=0.8.41",
     "@towify-types/live-data": ">=0.2.33",
-    "@towify/event-query-helper": ">=0.1.17",
-    "@towify/scf-engine": ">=0.4.8",
-    "soid-data": ">=0.2.1"
+    "@towify/event-query-helper": ">=0.1.23",
+    "@towify/scf-engine": ">=0.4.9",
+    "soid-data": ">=0.2.4"
   },
   "dependencies": {
-    "@towify-serverless/scf-api": "^0.7.8",
+    "@towify-serverless/scf-api": "^0.8.41",
     "@towify-types/live-data": "^0.2.33",
-    "@towify/event-query-helper": "^0.1.17",
-    "@towify/scf-engine": "^0.4.8",
-    "soid-data": "^0.2.1"
+    "@towify/event-query-helper": "^0.1.23",
+    "@towify/scf-engine": "^0.4.9",
+    "soid-data": "^0.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",

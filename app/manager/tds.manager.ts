@@ -16,6 +16,7 @@ import {
 import { EventQueryHelper } from '@towify/event-query-helper';
 import { SCF } from '@towify-serverless/scf-api';
 import { Md5 } from 'soid-data';
+import { LiveDataEngineQueryType } from '@towify-types/dsl/dsl-event.type';
 
 export class TDSManager {
   public readonly scf: ScfClientManager;
@@ -98,11 +99,8 @@ export class TDSManager {
       needToken: boolean;
       queries: QueryFilterDetailType[];
     };
-    queries?: {
-      fieldPath: QueryFieldPathType;
-      value: FieldValueType | FieldValueType[];
-      condition: QueryConditionEnum;
-    }[];
+    queryType?: 'or' | 'and',
+    queries?: LiveDataEngineQueryType[];
     sorts?: { fieldHashName?: string; type: SortEnum }[];
     executorId: string;
     customerToken: string;
@@ -116,6 +114,7 @@ export class TDSManager {
       tableHashName: params.tableHashName,
       preconditions: params.precondition,
       executor: {
+        queryType: params.queryType,
         queries: params.queries || [],
         sort: params.sorts?.map(sort => [
           sort.fieldHashName || 'createdAt',
