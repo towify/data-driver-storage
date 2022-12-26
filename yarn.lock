@@ -1367,34 +1367,19 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@towify-serverless/scf-api@^0.8.76":
-  version "0.8.77"
-  resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.8.77.tgz#1e2075210d28b44a5a19670307ce391af52bcb2a"
-  integrity sha512-quS4Lcvr+LUMliWbR5gXu27redRiGYiCQ+9s9i4bHcsv967yzIQUghAC6PAl5Ccq/1LunSafoTx33FafDjJS2w==
+"@towify-serverless/scf-api@^0.9.14", "@towify-serverless/scf-api@^0.9.18":
+  version "0.9.18"
+  resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.9.18.tgz#3f5a3aeabd817dfb4c5bcec8e805c2f34105fdb9"
+  integrity sha512-YN1CIHL+81HvhhNye+vAuS7ETpMN0hKPhC2IB4AklYIYMWXX44rMlW21PxMt2rfhtUQg3VatSU2z7zijqU3bsA==
   optionalDependencies:
     "@towify-types/account" "0.0.53"
     "@towify-types/config" ">=0.0.8"
     "@towify-types/dsl" ">=1.4.0"
     "@towify-types/kit" ">=0.1.27"
     "@towify-types/live-data" ">=0.4.0"
-    "@towify-types/resource" ">=0.2.0"
+    "@towify-types/resource" ">=0.2.15"
     "@towify-types/third-party" ">=0.0.3"
-    "@towify-types/user" ">=0.1.39"
-    "@towify-types/web" ">=0.0.15"
-
-"@towify-serverless/scf-api@^0.9.0":
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.9.0.tgz#6d345fbfb7f90acb466ddded78d53f7cc7dbeec6"
-  integrity sha512-nM95UZ4qsv2DawWzJsNdgRRcbhD1LugW/0k0Ddp8nfb0Tbuw7IXdhGeX/xhC3FYuwn0JrHw2AkhRbXsIPDu3iw==
-  optionalDependencies:
-    "@towify-types/account" "0.0.53"
-    "@towify-types/config" ">=0.0.8"
-    "@towify-types/dsl" ">=1.4.0"
-    "@towify-types/kit" ">=0.1.27"
-    "@towify-types/live-data" ">=0.4.0"
-    "@towify-types/resource" ">=0.2.0"
-    "@towify-types/third-party" ">=0.0.3"
-    "@towify-types/user" ">=0.1.39"
+    "@towify-types/user" ">=0.2.2"
     "@towify-types/web" ">=0.0.15"
 
 "@towify-types/account@0.0.53":
@@ -1409,7 +1394,7 @@
   dependencies:
     soid-data "0.0.83"
 
-"@towify-types/dsl@>=1.4.0", "@towify-types/dsl@^1.4.0":
+"@towify-types/dsl@>=1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.4.0.tgz#c833c711228314b092fc77f86e3fda13e4287fb4"
   integrity sha512-XxDPDsmRhZ5oXgL97fOrDHMqv5hUUj/ZXeS25s5SvgnvFQs0uiipN9Dg8i/ITr6upw6l9ja/hUAgU5B7DVaCww==
@@ -1427,6 +1412,16 @@
     "@towify-types/live-data" "^0.3.18"
     "@towify-types/user" "^0.1.25"
     "@towify/common-values" "0.1.20"
+    "@towify/type-helper" "0.0.2"
+
+"@towify-types/dsl@^1.4.18", "@towify-types/dsl@^1.4.6":
+  version "1.4.18"
+  resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.4.18.tgz#37ada3f76b4767456e6e5b6370dedeceb77726d1"
+  integrity sha512-6nwDrepYLqNqpGZeifpwHcCp57umBmG4kUOuVvN1M1ZJT5kIqr7HlBqzBrVNCt6O3SnRh+VSNnuN1V2tpp44Gw==
+  dependencies:
+    "@towify-types/live-data" "^0.4.4"
+    "@towify-types/user" "^0.2.2"
+    "@towify/common-values" "0.2.1"
     "@towify/type-helper" "0.0.2"
 
 "@towify-types/kit@>=0.1.27":
@@ -1450,20 +1445,29 @@
   dependencies:
     "@towify-types/user" "^0.1.22"
 
-"@towify-types/resource@>=0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@towify-types/resource/-/resource-0.2.0.tgz#e9d21ebee7951474e3a1de951d4c30545f4ff411"
-  integrity sha512-QvbRC0oxrsFx3UFwTnd3Y4FkUCZxZpCebknFinFZFX8QGxmuZBNeqt+tN+l62k2PUwHJ+1IfwJOXE/jVKOfbRg==
+"@towify-types/live-data@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@towify-types/live-data/-/live-data-0.4.4.tgz#7c39c51c9ad83c9d7e4875382df4cb168c71c549"
+  integrity sha512-GrExSR15cy7tMPENQEUJoeZCG7RhFOMt1icXZJ7vVcZn6g6zH3QtXfT1H5+ewkZuDZLdrSI7Vu/5lWd8wev6Ug==
+  dependencies:
+    "@towify-types/user" "^0.2.2"
+
+"@towify-types/resource@>=0.2.15":
+  version "0.2.15"
+  resolved "https://registry.yarnpkg.com/@towify-types/resource/-/resource-0.2.15.tgz#f482b0b64a23ede12d08570ca40deb0364c590f7"
+  integrity sha512-boictRCLRdnulSZRqcIkE0gWomXE1L3Rv2DDf2cJPcAo2H0iii+n0lrn2eNOJFDPJTBLJJ5yJMV9zE/aNAe3Og==
+  dependencies:
+    "@towify-types/user" "^0.2.0"
 
 "@towify-types/third-party@>=0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@towify-types/third-party/-/third-party-0.0.3.tgz#b1bf80f354abc42333cb3847cf664243f045939a"
   integrity sha512-hJTO7uYAnS9IJ/xavzTlWEx5TLq8BzvZzmmB4XU0ChEvPSpYCMtRCtMIh0FbHXo5YX+e+Wza2OO9+zXWsWda/g==
 
-"@towify-types/user@>=0.1.39":
-  version "0.1.39"
-  resolved "https://registry.yarnpkg.com/@towify-types/user/-/user-0.1.39.tgz#5802ea4d94b0c85fb8052700c9b324db3c56f702"
-  integrity sha512-72zqE0qT2L16XbOex0JoHIUhCwHTM92WdCO+k9I8b+fnxiE07+WN1/6j1PRK+RPzFzyd+acKSqXufxHQxHbBzA==
+"@towify-types/user@>=0.2.2", "@towify-types/user@^0.2.0", "@towify-types/user@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@towify-types/user/-/user-0.2.2.tgz#db73c0f110d8ae0ae3ee6bd0423e1e0770fe2165"
+  integrity sha512-crLptIwCgaaM8DwM3E+IDYheqeCdkKi4ZjDYoCtY+HILrQRpwuANmBdAhnUoEtEOixV5qtJMzn5cRxQuecqk4w==
 
 "@towify-types/user@^0.1.22", "@towify-types/user@^0.1.25":
   version "0.1.30"
@@ -1490,6 +1494,11 @@
   resolved "https://registry.yarnpkg.com/@towify/common-values/-/common-values-0.2.0.tgz#dc5b40279cc863b48dd4b97d20138d1b3a5e3f70"
   integrity sha512-+By2KpNq4csAcYTd7jzHMNPcCwpNNGqI5P18QZ5MmWF+T3IXw4q/nHyKzobYmEk2P63sSQufGWb6xgmtomvBnQ==
 
+"@towify/common-values@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@towify/common-values/-/common-values-0.2.1.tgz#ba5a62ef6189de70f0446f737457f5af6130f731"
+  integrity sha512-vytWyL+7gtkzsN/r1SqTUc7X+v9HGGUN0IgwuLXJ46KsRPsYLc4oIUPPfuSKhE1zVRKONM0nY0dssl7D3J+F1w==
+
 "@towify/encryptor@^0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@towify/encryptor/-/encryptor-0.1.1.tgz#d2c4d14299dec8a51d47dddfe368b85f802b5f28"
@@ -1497,22 +1506,22 @@
   dependencies:
     crypto-js "^4.1.1"
 
-"@towify/event-query-helper@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@towify/event-query-helper/-/event-query-helper-0.3.0.tgz#f15fe52f5cc96bc340df641ba300d646a9345c59"
-  integrity sha512-st08FymZwcvdukqvtzpwrGyT1a67uczFHoeFr//YJcdgeAGUsiiPaQxkcmtlMhbQnk/cmgVICOAXm+PD1G6NlQ==
+"@towify/event-query-helper@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@towify/event-query-helper/-/event-query-helper-0.3.1.tgz#005967fd89418fe48dbe8de970e359cad6374f3e"
+  integrity sha512-5mkFSQBSLR6Z7/7a13QqSBgkuQ6sIGhrlzrkM4Nmlo6TdnwlDyRkk59z/lkzHjvJ/gqR8qgn3Y5/hkaacNYwwQ==
   dependencies:
-    "@towify-types/dsl" "^1.4.0"
-    "@towify-types/live-data" "^0.4.0"
+    "@towify-types/dsl" "^1.4.6"
+    "@towify-types/live-data" "^0.4.1"
     "@towify/type-helper" "^0.0.2"
     soid-data "^0.3.0"
 
-"@towify/scf-engine@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@towify/scf-engine/-/scf-engine-0.6.0.tgz#a4d839dc06e5563d65ff4e67932a6602b918086a"
-  integrity sha512-IyyLUHPqLxnbijjS2g+lR7StD/hhFLwSYUCGi9IiZ+ouh7NYvP7blsGHYuugTMJvzk4mvQbkRxbOipsoqYglNQ==
+"@towify/scf-engine@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@towify/scf-engine/-/scf-engine-0.6.1.tgz#447b986969cc7190dd6fed952929916277f2a367"
+  integrity sha512-8DlmX+VhAmSm8xH1lOulg62lt9+Bk/AoK+EFEMcGFtF6cJyjuylfFsYjIRbHNqleKx60FrmfUdu3SShyEn97KQ==
   dependencies:
-    "@towify-serverless/scf-api" "^0.8.76"
+    "@towify-serverless/scf-api" "^0.9.14"
     "@towify/encryptor" "^0.1.1"
     soid-data "^0.3.0"
 
@@ -5500,6 +5509,13 @@ soid-data@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/soid-data/-/soid-data-0.3.0.tgz#015866ae61d5aaf2c8f5d010e40175acb25d2996"
   integrity sha512-sZVhchZcaojWslADWybvyODoxodOqK0Rw6rk2LEVq7Yk+xJeGUeBNlc0bgucaGNW6SMe3gd0q9Kq3+BDfUr6gQ==
+  optionalDependencies:
+    nanoid "3.3.4"
+
+soid-data@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/soid-data/-/soid-data-0.3.1.tgz#feb6f59cf4d739c01d71cc38fdadcc6edc23c639"
+  integrity sha512-myFUh7xAG8v9ncNK0B31aZIQaYv23LZtcMT0tVgTQluuvEv8e59RyvUX49Eayi+yAaKbCT+8Da1aOcU3CBnLsA==
   optionalDependencies:
     nanoid "3.3.4"
 
