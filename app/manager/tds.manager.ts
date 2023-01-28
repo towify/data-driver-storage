@@ -16,7 +16,7 @@ import {
 import { EventQueryHelper } from '@towify/event-query-helper';
 import { SCF } from '@towify-serverless/scf-api';
 import { Md5 } from 'soid-data';
-import { LiveDataEngineQueryType } from '@towify-types/dsl';
+import type { Event } from '@towify-types/dsl';
 
 export class TDSManager {
   public readonly scf: ScfClientManager;
@@ -100,7 +100,7 @@ export class TDSManager {
       queries: QueryFilterDetailType[];
     };
     queryType?: 'or' | 'and';
-    queries?: LiveDataEngineQueryType[];
+    queries?: Event.Query.EngineType[];
     sorts?: { fieldHashName?: string; type: SortEnum }[];
     executorId: string;
     customerToken: string;
