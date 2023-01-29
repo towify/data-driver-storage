@@ -31,19 +31,19 @@
     "*.{js,css,md,json,scss}": "prettier --write"
   },
   "peerDependencies": {
-    "@towify-serverless/scf-api": ">=0.9.31",
+    "@towify-serverless/scf-api": ">=0.9.33",
     "@towify-types/live-data": ">=0.4.8",
     "@towify/event-query-helper": ">=0.3.4",
     "@towify/scf-engine": ">=0.6.2",
-    "@towify-types/dsl": ">=1.5.1",
+    "@towify-types/dsl": ">=1.5.3",
     "soid-data": ">=0.3.9"
   },
   "dependencies": {
-    "@towify-serverless/scf-api": "^0.9.31",
+    "@towify-serverless/scf-api": "^0.9.33",
     "@towify-types/live-data": "^0.4.8",
     "@towify/event-query-helper": "^0.3.4",
     "@towify/scf-engine": "^0.6.2",
-    "@towify-types/dsl": "^1.5.1",
+    "@towify-types/dsl": "^1.5.3",
     "soid-data": "^0.3.9"
   },
   "devDependencies": {

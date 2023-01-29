@@ -91,6 +91,30 @@ export class TDSManager {
     else return { data };
   }
 
+  async aggregate(params: {
+    tableHashName: string;
+    code: string;
+    ignoreToken?: boolean;
+  }): Promise<{ message?: string; data?: LiveObjectType[] }> {
+    if (!params.code.includes('.aggregate')) {
+      throw new Error('TDS ERROR: invalid aggregate code.');
+    }
+    const { data, errorMessage } =
+      await this.scf.call<SCF.LiveTableAggregateTableItems>({
+        path: '/livetable/data/aggregate',
+        params: {
+          tableId: params.tableHashName,
+          code: params.code
+        },
+        method: 'post',
+        ignoreToken: params.ignoreToken === true
+      });
+    return {
+      message: errorMessage,
+      data: data?.list
+    };
+  }
+
   async find(params: {
     tableHashName: string;
     pageCount: number;

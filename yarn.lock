@@ -1382,14 +1382,14 @@
     "@towify-types/user" ">=0.2.2"
     "@towify-types/web" ">=0.0.15"
 
-"@towify-serverless/scf-api@^0.9.31":
-  version "0.9.31"
-  resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.9.31.tgz#89349015cbc6328cae4751fa49be7ee9561d47f3"
-  integrity sha512-AQE7HZ5YBZXf7KHID7P37Z5fTXXSffxuweEm2DlCe8ec8MUyVEoYFx9qNm35vl2en5DFOL7pKygrfadIelWmRw==
+"@towify-serverless/scf-api@^0.9.33":
+  version "0.9.33"
+  resolved "https://registry.yarnpkg.com/@towify-serverless/scf-api/-/scf-api-0.9.33.tgz#d17e0dc9b1878ac6f21f270ede9018b9cfd849ec"
+  integrity sha512-LUeScspQE16WvbK/UIMnDbRjbPF13QtZdNO2pm8XNdf1ARTy4q3uVV94L8pk00uOj48SxBXPIrc7cLOV+XO5Fg==
   optionalDependencies:
     "@towify-types/account" "0.0.53"
     "@towify-types/config" ">=0.0.8"
-    "@towify-types/dsl" ">=1.4.100"
+    "@towify-types/dsl" ">=1.5.1"
     "@towify-types/kit" ">=0.2.0"
     "@towify-types/live-data" ">=0.4.8"
     "@towify-types/resource" ">=0.2.15"
@@ -1409,22 +1409,32 @@
   dependencies:
     soid-data "0.0.83"
 
-"@towify-types/dsl@>=1.4.100", "@towify-types/dsl@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.5.1.tgz#8c249d17dddd2570edce72554ee223c50a73de3b"
-  integrity sha512-b0NoYejFc0vmTh5LZe4hma2h7BPDuGyGO3ErS1Nrn33PoDyI6q2uDsR5iCuS7VTN2WxAG6LW42Yptiv7ZTZSPQ==
-  dependencies:
-    "@towify-types/live-data" "^0.4.8"
-    "@towify-types/user" "^0.2.2"
-    "@towify/common-values" "0.2.1"
-    "@towify/type-helper" "0.0.2"
-
 "@towify-types/dsl@>=1.4.70", "@towify-types/dsl@^1.4.3":
   version "1.4.77"
   resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.4.77.tgz#e3382022bb4101eeab76f2c892d269006954fdd8"
   integrity sha512-+0w6fcyiTu2vPuA160q9sCG8saNzxWuGeMcI/OILV+/xQ8Xlcjl3QJILH+mmxGR/VT+Ep60GgyuKIiX4CYoy3g==
   dependencies:
     "@towify-types/live-data" "^0.4.4"
+    "@towify-types/user" "^0.2.2"
+    "@towify/common-values" "0.2.1"
+    "@towify/type-helper" "0.0.2"
+
+"@towify-types/dsl@>=1.5.1", "@towify-types/dsl@^1.5.3":
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.5.3.tgz#1068478fb0b95e147dcff0c25c65e1eec2e95085"
+  integrity sha512-yBp6wMocP1xtEzACoTJIoTp2NaYpNTp7mBLLARMOXyOS5AxOEfE12Y9kbJFsOM8EB/ie8/Fn/qQyF01QT8WPPw==
+  dependencies:
+    "@towify-types/live-data" "^0.4.8"
+    "@towify-types/user" "^0.2.2"
+    "@towify/common-values" "0.2.1"
+    "@towify/type-helper" "0.0.2"
+
+"@towify-types/dsl@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.5.1.tgz#8c249d17dddd2570edce72554ee223c50a73de3b"
+  integrity sha512-b0NoYejFc0vmTh5LZe4hma2h7BPDuGyGO3ErS1Nrn33PoDyI6q2uDsR5iCuS7VTN2WxAG6LW42Yptiv7ZTZSPQ==
+  dependencies:
+    "@towify-types/live-data" "^0.4.8"
     "@towify-types/user" "^0.2.2"
     "@towify/common-values" "0.2.1"
     "@towify/type-helper" "0.0.2"
