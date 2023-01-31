@@ -4,15 +4,8 @@
  */
 import { ScfClientManager } from '@towify/scf-engine';
 
-import {
-  FieldValueType,
-  LiveObjectType,
-  QueryConditionEnum,
-  QueryFieldPathType,
-  QueryFilterDetailType,
-  QueryFilterType,
-  SortEnum
-} from '@towify-types/live-data';
+import type { Field, LiveObjectType, Query } from '@towify-types/live-data';
+import { QueryConditionEnum, SortEnum } from '@towify-types/live-data';
 import { EventQueryHelper } from '@towify/event-query-helper';
 import { SCF } from '@towify-serverless/scf-api';
 import { Md5 } from 'soid-data';
@@ -121,7 +114,7 @@ export class TDSManager {
     pageIndex: number;
     precondition?: {
       needToken: boolean;
-      queries: QueryFilterDetailType[];
+      queries: Query.FilterDetailType[];
     };
     queryType?: 'or' | 'and';
     queries?: Event.Query.EngineType[];
@@ -172,11 +165,11 @@ export class TDSManager {
     tableHashName: string;
     precondition?: {
       needToken: boolean;
-      queries: QueryFilterDetailType[];
+      queries: Query.FilterDetailType[];
     };
     queries?: {
-      fieldPath: QueryFieldPathType;
-      value: FieldValueType | FieldValueType[];
+      fieldPath: Query.FieldPathType;
+      value: Field.ValueType | Field.ValueType[];
       condition: QueryConditionEnum;
     }[];
     executorId: string;
@@ -243,14 +236,14 @@ export class TDSManager {
   async updateRowsWithQueries(params: {
     tableHashName: string;
     queries?: {
-      fieldPath: QueryFieldPathType;
-      value: FieldValueType | FieldValueType[];
+      fieldPath: Query.FieldPathType;
+      value: Field.ValueType | Field.ValueType[];
       condition: QueryConditionEnum;
     }[];
     fieldInfo: {
       hashName: string;
       isIncrement?: boolean;
-      content: FieldValueType;
+      content: Field.ValueType;
     }[];
     ignoreToken?: boolean;
     client?: 'Simulator' | 'DataDriver';
@@ -291,12 +284,12 @@ export class TDSManager {
     fieldInfo: {
       hashName: string;
       isIncrement?: boolean;
-      content: FieldValueType;
+      content: Field.ValueType;
     }[];
     ignoreToken?: boolean;
     client?: 'Simulator' | 'DataDriver';
   }): Promise<string | undefined> {
-    const filter: QueryFilterType = {};
+    const filter: Query.FilterType = {};
     const data: LiveObjectType = {};
     let incrementData: { [fieldHashName: string]: number } | undefined;
     params.fieldInfo.forEach(info => {

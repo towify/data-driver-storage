@@ -4,13 +4,12 @@
  */
 import { IQueryManager } from './query-manager.interface';
 import {
-  FieldValueType,
-  LiveObjectType,
+  Field,
+  Query,
   QueryConditionEnum,
-  QueryFieldPathType,
-  QueryFilterDetailType,
   SortEnum
 } from '@towify-types/live-data';
+import type { LiveObjectType } from '@towify-types/live-data';
 import { NanoIdHelper } from 'soid-data';
 import { TDSManager } from './tds.manager';
 
@@ -20,11 +19,11 @@ export class QueryManager implements IQueryManager {
     pageIndex: number;
     precondition?: {
       needToken: boolean;
-      queries: QueryFilterDetailType[];
+      queries: Query.FilterDetailType[];
     };
     queries?: {
-      fieldPath: QueryFieldPathType;
-      value: FieldValueType | FieldValueType[];
+      fieldPath: Query.FieldPathType;
+      value: Field.ValueType | Field.ValueType[];
       condition: QueryConditionEnum;
     }[];
     sorts?: { fieldHashName?: string; type: SortEnum }[];
@@ -34,8 +33,8 @@ export class QueryManager implements IQueryManager {
   };
 
   #queries: {
-    fieldPath: QueryFieldPathType;
-    value: FieldValueType | FieldValueType[];
+    fieldPath: Query.FieldPathType;
+    value: Field.ValueType | Field.ValueType[];
     condition: QueryConditionEnum;
   }[] = [];
 
@@ -113,7 +112,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  contains(fieldPath: QueryFieldPathType, value: string): this {
+  contains(fieldPath: Query.FieldPathType, value: string): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -122,7 +121,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  some(fieldPath: QueryFieldPathType, value: string): this {
+  some(fieldPath: Query.FieldPathType, value: string): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -131,7 +130,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  containsIn(fieldPath: QueryFieldPathType, value: string[]): this {
+  containsIn(fieldPath: Query.FieldPathType, value: string[]): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -140,7 +139,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  doesNotContain(fieldPath: QueryFieldPathType, value: string): this {
+  doesNotContain(fieldPath: Query.FieldPathType, value: string): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -149,7 +148,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  containsAll(fieldPath: QueryFieldPathType, value: FieldValueType[]): this {
+  containsAll(fieldPath: Query.FieldPathType, value: Field.ValueType[]): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -158,7 +157,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  include(fieldPath: QueryFieldPathType, value: string): this {
+  include(fieldPath: Query.FieldPathType, value: string): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -167,7 +166,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  doesNotExist(fieldPath: QueryFieldPathType): this {
+  doesNotExist(fieldPath: Query.FieldPathType): this {
     this.#queries.push({
       fieldPath,
       value: '',
@@ -176,7 +175,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  exists(fieldPath: QueryFieldPathType): this {
+  exists(fieldPath: Query.FieldPathType): this {
     this.#queries.push({
       fieldPath,
       value: '',
@@ -185,12 +184,12 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  equalTo(fieldPath: QueryFieldPathType, value: FieldValueType): this {
+  equalTo(fieldPath: Query.FieldPathType, value: Field.ValueType): this {
     this.#queries.push({ fieldPath, value, condition: QueryConditionEnum.Is });
     return this;
   }
 
-  greaterThan(fieldPath: QueryFieldPathType, value: number | Date): this {
+  greaterThan(fieldPath: Query.FieldPathType, value: number | Date): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -200,7 +199,7 @@ export class QueryManager implements IQueryManager {
   }
 
   greaterThanOrEqualTo(
-    fieldPath: QueryFieldPathType,
+    fieldPath: Query.FieldPathType,
     value: number | Date
   ): this {
     this.#queries.push({
@@ -211,7 +210,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  lessThan(fieldPath: QueryFieldPathType, value: number | Date): this {
+  lessThan(fieldPath: Query.FieldPathType, value: number | Date): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -220,7 +219,10 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  lessThanOrEqualTo(fieldPath: QueryFieldPathType, value: number | Date): this {
+  lessThanOrEqualTo(
+    fieldPath: Query.FieldPathType,
+    value: number | Date
+  ): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -229,7 +231,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  notEqualTo(fieldPath: QueryFieldPathType, value: FieldValueType): this {
+  notEqualTo(fieldPath: Query.FieldPathType, value: Field.ValueType): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -238,7 +240,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  startWith(fieldPath: QueryFieldPathType, value: string): this {
+  startWith(fieldPath: Query.FieldPathType, value: string): this {
     this.#queries.push({
       fieldPath,
       value,
@@ -247,7 +249,7 @@ export class QueryManager implements IQueryManager {
     return this;
   }
 
-  endWith(fieldPath: QueryFieldPathType, value: string): this {
+  endWith(fieldPath: Query.FieldPathType, value: string): this {
     this.#queries.push({
       fieldPath,
       value,

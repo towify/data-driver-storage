@@ -2,44 +2,40 @@
  * @author kaysaith
  * @date 24 Jul, 2022
  */
-import {
-  FieldValueType,
-  LiveObjectType,
-  QueryFieldPathType
-} from '@towify-types/live-data';
+import { Field, LiveObjectType, Query } from '@towify-types/live-data';
 
 export interface IQueryManager {
-  equalTo(fieldPath: QueryFieldPathType, value: FieldValueType): this;
+  equalTo(fieldPath: Query.FieldPathType, value: Field.ValueType): this;
 
-  notEqualTo(fieldPath: QueryFieldPathType, value: FieldValueType): this;
+  notEqualTo(fieldPath: Query.FieldPathType, value: Field.ValueType): this;
 
-  lessThan(fieldPath: QueryFieldPathType, value: number): this;
+  lessThan(fieldPath: Query.FieldPathType, value: number): this;
 
-  lessThanOrEqualTo(fieldPath: QueryFieldPathType, value: number): this;
+  lessThanOrEqualTo(fieldPath: Query.FieldPathType, value: number): this;
 
-  greaterThan(fieldPath: QueryFieldPathType, value: number): this;
+  greaterThan(fieldPath: Query.FieldPathType, value: number): this;
 
-  greaterThanOrEqualTo(fieldPath: QueryFieldPathType, value: number): this;
+  greaterThanOrEqualTo(fieldPath: Query.FieldPathType, value: number): this;
 
   /** 可以用 contains 来查找某一属性值包含特定字符串的对象 */
-  contains(fieldPath: QueryFieldPathType, value: string): this;
+  contains(fieldPath: Query.FieldPathType, value: string): this;
 
   /** 可以用 doesNotContain 来查找某一属性值包含特定字符串的对象 */
-  doesNotContain(fieldPath: QueryFieldPathType, value: string): this;
+  doesNotContain(fieldPath: Query.FieldPathType, value: string): this;
 
   /** 可以用 containsAll 来查找某一属性值包含特定字符串的对象 */
-  containsAll(fieldPath: QueryFieldPathType, value: FieldValueType[]): this;
+  containsAll(fieldPath: Query.FieldPathType, value: Field.ValueType[]): this;
 
   /** 可以用 contains 来查找某一属性值包含特定字符串的对象 */
-  include(fieldPath: QueryFieldPathType, value: string): this;
+  include(fieldPath: Query.FieldPathType, value: string): this;
 
   /** 可以用 startsWith 来查找某一属性值以特定字符串开头的对象。和 SQL 中的 LIKE
    * 一样，你可以利用索引带来的优势 */
-  startWith(fieldPath: QueryFieldPathType, value: string): this;
+  startWith(fieldPath: Query.FieldPathType, value: string): this;
 
-  endWith(fieldPath: QueryFieldPathType, value: string): this;
+  endWith(fieldPath: Query.FieldPathType, value: string): this;
 
-  some(fieldPath: QueryFieldPathType, value: string): this;
+  some(fieldPath: Query.FieldPathType, value: string): this;
 
   pageIndex(count: number): this;
 
@@ -60,9 +56,9 @@ export interface IQueryManager {
 
   descending(fieldHashName: string): this;
 
-  exists(fieldPath: QueryFieldPathType): this;
+  exists(fieldPath: Query.FieldPathType): this;
 
-  doesNotExist(fieldHashName: QueryFieldPathType): this;
+  doesNotExist(fieldHashName: Query.FieldPathType): this;
 
   count(): Promise<{ message?: string; count?: number }>;
 
