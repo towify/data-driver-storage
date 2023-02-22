@@ -33,7 +33,7 @@
   "peerDependencies": {
     "@towify-serverless/scf-api": ">=1.0.23",
     "@towify-types/live-data": ">=0.5.2",
-    "@towify/event-query-helper": ">=0.4.0",
+    "@towify/event-query-helper": ">=0.4.1",
     "@towify/scf-engine": ">=0.6.4",
     "@towify-types/dsl": ">=1.5.27",
     "soid-data": ">=0.3.11"
@@ -41,7 +41,7 @@
   "dependencies": {
     "@towify-serverless/scf-api": "^1.0.23",
     "@towify-types/live-data": "^0.5.2",
-    "@towify/event-query-helper": "^0.4.0",
+    "@towify/event-query-helper": "^0.4.1",
     "@towify/scf-engine": "^0.6.4",
     "@towify-types/dsl": "^1.5.27",
     "soid-data": "^0.3.11"

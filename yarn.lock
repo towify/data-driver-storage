@@ -1451,16 +1451,6 @@
     "@towify/common-values" "0.2.1"
     "@towify/type-helper" "0.0.2"
 
-"@towify-types/dsl@^1.5.5":
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/@towify-types/dsl/-/dsl-1.5.5.tgz#1fd7781c282dfb9556a9a5d256cfb821ea0a9e38"
-  integrity sha512-V4UdSoUioF5d3FXhluPp+6M74oxXA/IswfgQGjzjx1QlHNL2Bv+jI1JimR5WNcyDwuJqALYjapss2EfUTPqGoA==
-  dependencies:
-    "@towify-types/live-data" "^0.5.1"
-    "@towify-types/user" "^0.3.5"
-    "@towify/common-values" "0.2.1"
-    "@towify/type-helper" "0.0.2"
-
 "@towify-types/kit@>=0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@towify-types/kit/-/kit-0.2.0.tgz#8c88a68a8ad244bb2a47bd4dac93d714951526d6"
@@ -1481,13 +1471,6 @@
   integrity sha512-GrExSR15cy7tMPENQEUJoeZCG7RhFOMt1icXZJ7vVcZn6g6zH3QtXfT1H5+ewkZuDZLdrSI7Vu/5lWd8wev6Ug==
   dependencies:
     "@towify-types/user" "^0.2.2"
-
-"@towify-types/live-data@^0.5.1":
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/@towify-types/live-data/-/live-data-0.5.1.tgz#5fcd5ab78cf5b2be56aa570acb898d332d2a5b10"
-  integrity sha512-eug4SsutbQSx+tTcoESz1bho+jMLZKRJ9esVGg7sU7kDLZAK+SlGJAnZQd7QnYRwfyzMs3WwRYEL2Y+ODY6p4Q==
-  dependencies:
-    "@towify-types/user" "^0.3.4"
 
 "@towify-types/resource@>=0.2.16":
   version "0.2.16"
@@ -1538,15 +1521,15 @@
   dependencies:
     crypto-js "^4.1.1"
 
-"@towify/event-query-helper@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@towify/event-query-helper/-/event-query-helper-0.4.0.tgz#e8b417ce7345918258796d3cf74b59f73d403d6d"
-  integrity sha512-OnEe0Jxy2hQxyc40MDBDvlGwS8LMn6FTUyQFENo9nWXKyKnuAHScthfU8G5vVgU9/IqtjW8u0m1ATW1Hlbjdsg==
+"@towify/event-query-helper@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@towify/event-query-helper/-/event-query-helper-0.4.1.tgz#f68f895efbeec1210116b39dbe9387029ade80e0"
+  integrity sha512-JWOR9aE0zgu6zXsGdqJdDCkkCWi88LJXQA6JQ/pYbC/GdtMNN8waO4lW9BL69FiuheFi8dJyflgbt7tVFnSycw==
   dependencies:
-    "@towify-types/dsl" "^1.5.5"
-    "@towify-types/live-data" "^0.5.1"
+    "@towify-types/dsl" "^1.5.27"
+    "@towify-types/live-data" "^0.5.2"
     "@towify/type-helper" "^0.0.2"
-    soid-data "^0.3.9"
+    soid-data "^0.3.11"
 
 "@towify/scf-engine@^0.6.4":
   version "0.6.4"
@@ -5689,13 +5672,6 @@ soid-data@^0.3.11:
   version "0.3.11"
   resolved "https://registry.yarnpkg.com/soid-data/-/soid-data-0.3.11.tgz#8c7228db05923ad802fa96e3579eb55583d7c9e6"
   integrity sha512-raHmdBYSTVhXYBS+TODil3H01ntv+95kDSB5fms6K7BYkRJIsqGMeS3MUk4Xo45h4TxKh3tF3n6B/48tR4dzng==
-  optionalDependencies:
-    nanoid "3.3.4"
-
-soid-data@^0.3.9:
-  version "0.3.9"
-  resolved "https://registry.yarnpkg.com/soid-data/-/soid-data-0.3.9.tgz#86060cf3418ce120f2c1eea6ddc5b1b27a3a2b6e"
-  integrity sha512-rUDwnt9WFKBpCKJFb7vphzMLaT/SpnfPwKmkE9UYrptGSH//sNxOZP9Rg6evfsVu6uV8wRNlygAsMb8E3x3+pw==
   optionalDependencies:
     nanoid "3.3.4"
 
