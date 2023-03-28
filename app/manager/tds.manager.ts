@@ -89,9 +89,6 @@ export class TDSManager {
     code: string;
     ignoreToken?: boolean;
   }): Promise<{ message?: string; data?: LiveObjectType[] }> {
-    if (!params.code.includes('.aggregate')) {
-      throw new Error('TDS ERROR: invalid aggregate code.');
-    }
     const { data, errorMessage } =
       await this.scf.call<SCF.LiveTableAggregateTableItems>({
         path: '/livetable/data/aggregate',
@@ -123,6 +120,7 @@ export class TDSManager {
     customerToken: string;
     ignoreToken?: boolean;
     client?: 'Simulator' | 'DataDriver';
+    specialTableEvent?: 'passwordLogin';
   }): Promise<{
     message?: string;
     data?: { list: LiveObjectType[]; count?: number };
@@ -144,6 +142,7 @@ export class TDSManager {
     const response = await this.scf.call<SCF.LiveTableFindTableItems>({
       path: '/livetable/data/find',
       params: {
+        specialTableEvent: params.specialTableEvent,
         content: findContent,
         executorId: params.executorId,
         token: params.customerToken,
