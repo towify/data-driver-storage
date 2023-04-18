@@ -31,19 +31,19 @@
     "*.{js,css,md,json,scss}": "prettier --write"
   },
   "peerDependencies": {
-    "@towify-serverless/scf-api": ">=1.0.38",
+    "@towify-serverless/scf-api": ">=1.0.46",
     "@towify-types/live-data": ">=0.5.6",
-    "@towify/event-query-helper": ">=0.4.3",
+    "@towify/event-query-helper": ">=0.4.11",
     "@towify/scf-engine": ">=0.6.5",
-    "@towify-types/dsl": ">=1.5.57",
+    "@towify-types/dsl": ">=1.5.69",
     "soid-data": ">=0.3.13"
   },
   "dependencies": {
-    "@towify-serverless/scf-api": "^1.0.38",
+    "@towify-serverless/scf-api": "^1.0.46",
     "@towify-types/live-data": "^0.5.6",
-    "@towify/event-query-helper": "^0.4.3",
+    "@towify/event-query-helper": "^0.4.11",
     "@towify/scf-engine": "^0.6.5",
-    "@towify-types/dsl": "^1.5.57",
+    "@towify-types/dsl": "^1.5.69",
     "soid-data": ">=0.3.13"
   },
   "devDependencies": {
@@ -69,7 +69,7 @@
     "prettier": "^2.8.4",
     "ts-jest": "26.5.6",
     "ts-node": "^10.9.1",
-    "typescript": "~4.9.5"
+    "typescript": "~5.0.4"
   },
   "keywords": [
     "cli",

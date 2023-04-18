@@ -121,6 +121,7 @@ export class TDSManager {
     ignoreToken?: boolean;
     client?: 'Simulator' | 'DataDriver';
     specialTableEvent?: 'passwordLogin';
+    ignoredFields?: { [tableHashName: string]: string[] };
   }): Promise<{
     message?: string;
     data?: { list: LiveObjectType[]; count?: number };
@@ -136,7 +137,8 @@ export class TDSManager {
           sort.type
         ]),
         limit: params.pageCount,
-        skip: params.pageCount * params.pageIndex
+        skip: params.pageCount * params.pageIndex,
+        ignoredFields: params.ignoredFields
       }
     });
     const response = await this.scf.call<SCF.LiveTableFindTableItems>({
