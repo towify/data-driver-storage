@@ -88,7 +88,7 @@ export class TDSManager {
     tableHashName: string;
     code: string;
     ignoreToken?: boolean;
-  }): Promise<{ message?: string; data?: LiveObjectType[] }> {
+  }): Promise<{ message?: string; data?: LiveObjectType | LiveObjectType[] }> {
     const { data, errorMessage } =
       await this.scf.call<SCF.LiveTableAggregateTableItems>({
         path: '/livetable/data/aggregate',
