@@ -31,20 +31,20 @@
     "*.{js,css,md,json,scss}": "prettier --write"
   },
   "peerDependencies": {
-    "@towify-serverless/scf-api": ">=1.0.67",
+    "@towify-serverless/scf-api": ">=1.1.5",
     "@towify-types/live-data": ">=0.5.6",
-    "@towify/event-query-helper": ">=0.4.12",
-    "@towify/scf-engine": ">=0.6.8",
-    "@towify-types/dsl": ">=1.6.37",
-    "soid-data": ">=0.4.2"
+    "@towify/event-query-helper": ">=0.4.14",
+    "@towify/scf-engine": ">=0.7.1",
+    "@towify-types/dsl": ">=1.6.62",
+    "soid-data": ">=0.4.13"
   },
   "dependencies": {
-    "@towify-serverless/scf-api": "^1.0.67",
+    "@towify-serverless/scf-api": "^1.1.5",
     "@towify-types/live-data": "^0.5.6",
-    "@towify/event-query-helper": "^0.4.12",
-    "@towify/scf-engine": "^0.6.8",
-    "@towify-types/dsl": "^1.6.37",
-    "soid-data": "^0.4.2"
+    "@towify/event-query-helper": "^0.4.14",
+    "@towify/scf-engine": "^0.7.1",
+    "@towify-types/dsl": "^1.6.62",
+    "soid-data": "^0.4.13"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
